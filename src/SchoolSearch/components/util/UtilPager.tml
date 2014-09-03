@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<t:delegate to="styleBlock"></t:delegate>
+	<t:block t:id="full">
+		<div class="pagination">
+			<ul>
+				<t:if test="isFirstPage()">
+					<li class="disabled"><a href="javascript:void(0);">&laquo;</a></li>
+					<p:else>
+						<li><t:eventlink zone="prop:zone" event="switchToPrePage" context="[context,currentPage]">&laquo;</t:eventlink></li>
+					</p:else>
+				</t:if>
+				<t:if test="displayFirst()" negate="true">
+					<li class="disabled"><a href="javascript:void(0);">...</a></li>
+				</t:if>
+				<t:loop source="pages" value="pageNum">
+					<t:if test="isCurPage()">
+						<li class="active"><a href="javascript:void(0);">${pageNum }</a></li>
+						<p:else>
+							<li> <t:eventlink zone="prop:zone" event="switchToPage" context="[context,pageNum]">${pageNum }</t:eventlink> </li>
+						</p:else>
+					</t:if>
+				</t:loop>
+				<t:if test="displayLast()" negate="true">
+					<li class="disabled"><a href="javascript:void(0);">...</a></li>
+				</t:if>
+				<t:if test="isLastPage()">
+					<li class="disabled"><a href="javascript:void(0);">&raquo;</a></li>
+					<p:else>
+						<li><t:eventlink zone="prop:zone" event="switchToNextPage" context="[context,currentPage]">&raquo;</t:eventlink></li>
+					</p:else>
+				</t:if>
+			</ul>
+		</div>
+	</t:block>
+	<t:block t:id="simple">
+		<div class="pagination">
+			<ul>
+				<t:if test="isFirstPage()">
+					<li class="disabled"><a href="javascript:void(0);">&laquo;</a></li>
+					<p:else>
+						<li><t:eventlink zone="prop:zone" event="switchToPrePage" context="[context,currentPage]">&laquo;</t:eventlink></li>
+					</p:else>
+				</t:if>
+				<li class="disabled"><a href="javascript:void(0);">${currentPage} / ${totalPage }</a></li>
+				<t:if test="isLastPage()">
+					<li class="disabled"><a href="javascript:void(0);">&raquo;</a></li>
+					<p:else>
+						<li><t:eventlink zone="prop:zone" event="switchToNextPage" context="[context,currentPage]">&raquo;</t:eventlink></li>
+					</p:else>
+				</t:if>
+			</ul>
+		</div>
+	</t:block>
+</t:container>

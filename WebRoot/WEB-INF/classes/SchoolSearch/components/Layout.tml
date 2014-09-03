@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+
+<head>
+	<title><t:delegate to="title" /></title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="${meta_keywords}" />
+	<meta name="description" content="${meta_description}" />
+</head>
+
+<body>	
+	<t:layout.navigator/>
+	<div style="clear:both" class="clear"></div>
+	<t:if test="withSubheader">
+		<t:layout.subheader query="query"></t:layout.subheader>
+		<div style="clear:both" class="clear"></div>
+	</t:if>
+	<t:body />
+	<t:layout.footer/>
+</body>
+</html>

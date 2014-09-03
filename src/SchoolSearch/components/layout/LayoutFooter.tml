@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div id="footer">
+		<div id="footer_rad_t"></div>
+		<div id="footer_in">
+			<div id="footer_line"></div>
+			<div id="copyright" style="text-align:center;">Copyright 2013-2014 KEG, Tsinghua. All Rights Reserved.</div>
+		</div>
+		<div id="footer_rad_b"></div>
+	</div>
+</t:container>

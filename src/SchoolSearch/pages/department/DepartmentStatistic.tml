@@ -1,0 +1,14 @@
+		<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="${title}" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index">
+	
+	<div class="container">
+		<p>Department Person Number: ${personNumber }</p>	
+		<t:loop source="depPositionList" value="depPosition">
+			<p>${depPosition }</p>
+			<p>${PositionPersonNumber }</p>
+		</t:loop>
+	</div>
+	<script type="text/javascript">
+	</script>
+</html>

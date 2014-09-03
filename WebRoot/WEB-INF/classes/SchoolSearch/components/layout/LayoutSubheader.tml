@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div class="navbar navbar-static-top small subnav">
+		<div class="navbar-inner">
+			<div class="container none" style="height: 37px;">
+				<t:form t:id="searchForm" t:autofocus="false" class="navbar-form fn_search_form">
+						<!-- <t:textfield t:id="query" value="query" translate="string" autocomplete="off" class="srch_input fn_searchInput"></t:textfield> -->
+						<t:textfield t:id="query" value="query" translate="string" placeholder="搜索" autocomplete="off" class="srch_input fn_searchInput" ></t:textfield>
+						<t:submit value="搜索" class="btn btn-primaryd" style="margin-left:3px;"></t:submit>
+						
+						<t:suggestion.component suggestionType = "suggestionType"></t:suggestion.component>
+						
+						
+						
+				</t:form>
+			</div>
+		</div>
+	</div>
+</t:container>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<t:if test="graduatepublicationList">
+	<ul id="grapub_list" class="rich-info-list publication-list rich-list small">
+		<t:loop source="graduatepublicationList" value="graduatepublication" index="index">
+			<li pid="${graduatepublication.id}" class="s-item borderJournal">
+				<div style="width:28px; margin-left: 0px;" class="fix-span1 pull-left">
+					<span class="line-number">${lineNumber }</span>
+				</div>
+				<div style="margin-left:28px;margin-right:0px;float: none; width: auto" class="autospan">
+					<t:if test = "checkGrapubEnglishName()">
+						<h3>${graduatepublication.title_cn }(${graduatepublication.title_en })</h3>
+					<p:else>
+						<h3>${graduatepublication.title_cn }</h3>					
+					</p:else>
+					</t:if>
+					
+					<div style="float:lefdt;margin-right:12px;" class="p authors">
+						<t:if test="authorId">
+							<t:if test="authorisselfid">
+								作者：<t:pagelink page="person" class="highlight" context="authorId">${graduatepublication.author}</t:pagelink>
+								<p:else>
+									作者：<t:pagelink page="person" context="authorId"> ${graduatepublication.author}</t:pagelink> 
+								</p:else>
+							</t:if>
+							<p:else>
+								<span>论文作者：${graduatepublication.author}</span>				
+							</p:else>
+						</t:if>
+					</div>
+					<div style="float:lefdt;margin-right:12px;" class="p authors">论文指导老师：
+						<t:loop source="getAllTutorPersonId()" value="TutorPersonId" index="TutorIndex" > 
+							<t:if test= "TutorPersonId">
+								<t:if test="tutorisselfid">
+									<t:pagelink page="person" class="highlight" context="TutorPersonId">${TutorName }</t:pagelink>
+									<p:else>
+										<t:pagelink page="person" context="TutorPersonId ">${TutorName } </t:pagelink>
+									</p:else>
+								</t:if>
+								<t:if test="isLastTutor()"><p:else> ， </p:else> </t:if>
+							<p:else>
+								<span>${TutorName } </span> 
+							</p:else>
+							</t:if> 
+						</t:loop>
+					
+					</div>
+					<div class="p pull-left">
+						<span style="margin-right: 12px;">学位类型: ${graduatepublication.degree_type}</span>
+						<t:if test="graduatepublication.submit_date">
+							<span>提交时间: ${graduatepublication.submit_date }</span>
+						</t:if>
+					</div>
+					<div class="p">
+						<div class="pull-right label-area">
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</li>
+		</t:loop>
+	</ul>
+	
+	
+	</t:if>
+		
+</t:container>

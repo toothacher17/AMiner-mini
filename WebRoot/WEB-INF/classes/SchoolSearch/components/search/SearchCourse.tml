@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div class="container-fluid none">
+		<div class="row-fluid">
+			<div class="box box-mini box-blue">
+				<div class="box-header ">
+					<h5 class="small-margin">"${query }" 的相关课程 </h5>
+				</div>
+				<div class="box-body">
+					<t:zone t:id="courseDisplayZone" elementName="div">
+						<div class="row-fluid align-right">
+							<p class="small-gray small-h-margin"> ${parameter.currentPage } / ${parameter.totalPage } 课程结果 (0 seconds) </p>
+						</div>
+						<t:course.list courseIdList="courseIdList" orderby="literal:normal"></t:course.list>
+						<div class="row-fluid" style="text-align: center">
+							<t:if test="parameter.totalPage">
+								<t:util.pager zone="courseDisplayZone" parameter="parameter" context="[pagerQuery]" style="simple"></t:util.pager>
+							</t:if>
+						</div>
+					</t:zone>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</t:container>

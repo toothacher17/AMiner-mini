@@ -1,0 +1,79 @@
+			<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="${title}" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index">
+	
+	<div class="container">
+		<t:if test="person">
+		
+			<div class="row">
+				<div class="span7">
+					<div class="row-fluid">
+						<div style="margin-top:4px;width: 160px;" class="span3">
+							<t:person.avatar personId="person.id"></t:person.avatar>
+						</div>
+						<div class="span4" style="width:360px;">
+							<t:person.profileComponent personId="person.id"/>
+						</div>
+					</div>
+					<t:if test="personExt">
+						<t:person.extComponent personId="person.id" field="literal:title" title="头衔"></t:person.extComponent>
+					</t:if>
+					<t:person.infoComponent personId="person.id" field="literal:resume" title="个人简介"></t:person.infoComponent>
+				</div>
+				<t:if test="getPersonRelationGraph()">
+					<div class="span5">
+						<t:person.relationGraph personId="person.id"/>
+					</div>
+				</t:if>
+			</div>
+			<t:if test="getPublicationFlag()">
+				<t:person.curveComponent personId="person.id" >论文曲线</t:person.curveComponent>  
+			</t:if>
+			<t:person.infoComponent personId="person.id" field="literal:education" title="教育经历"></t:person.infoComponent>
+			<t:person.infoComponent personId="person.id" field="literal:projects" title="研究课题"></t:person.infoComponent>
+			<t:person.infoComponent personId="person.id" field="literal:honor" title="学术荣誉"></t:person.infoComponent>
+			<t:person.infoComponent personId="person.id" field="literal:parttime" title="学术任职"></t:person.infoComponent>
+			<t:person.infoComponent personId="person.id" field="literal:fields" title="研究领域"></t:person.infoComponent>
+			<t:person.infoComponent personId="person.id" field="literal:summary" title="研究概况" newLineRegex="[\n]+"></t:person.infoComponent>
+			<t:person.infoComponent personId="person.id" field="literal:experience" title="工作履历"></t:person.infoComponent>
+			<t:if test="courseList">
+				<div class="row">
+					<div class="span8">
+						<div class="auto-hide-container t-zone">
+							<div class="section-header">
+								<h2> 教授课程
+								</h2>
+							</div>
+							<div class="section">
+								<t:person.courseList personId="person.id"></t:person.courseList>
+							</div>
+						</div>
+					</div>
+				</div>
+			</t:if>
+			
+			<t:if test="publicationIdList">
+				<div class="row">
+					<div class="span8">
+						<div class="auto-hide-container t-zone">
+							<t:pagelink page="admin/publicationManage" context="[person.id]" class="btn btn-mini btn-inverse btn-clear auto-hide">修改我的论文</t:pagelink>
+							<div class="section-header">
+								<h2> 发表论文
+								</h2>
+							</div>
+							<div class="section">
+							<t:person.publicationList personId="person.id"></t:person.publicationList>
+							</div>
+						</div>
+					</div>
+				</div>
+			</t:if>
+			
+			
+			<p:else>
+				<h2>该人不存在。</h2>
+			</p:else>
+			
+		</t:if>
+    </div>
+</html>

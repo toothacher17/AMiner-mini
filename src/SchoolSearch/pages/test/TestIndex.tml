@@ -1,0 +1,10 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" t:fullwidth="false"
+	t:title="校园搜索 测试页面" t:meta_keywords="" t:meta_description=""
+	t:currentPage="Index">
+
+	<div style="clear:both; height: 10px;" class="clear"></div>
+	<div class="container" id="container">
+		<t:person.publicationList personId="personId"></t:person.publicationList>
+	</div>
+</html>

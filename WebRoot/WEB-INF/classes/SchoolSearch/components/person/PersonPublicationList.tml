@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div class="row-fluid">
+		<div class="span12 yearlist-h-tab btn-group fn_year_select" id="yearsTitle">
+			<t:eventlink event="select" zone="authorPubZone" context="literal:all" class="btn btn-small btn-2line">所有论文<br clear="none"/>(${allSize })</t:eventlink>
+			<!-- <t:eventlink event="select" zone="authorPubZone" context="literal:recent" class="active btn btn-small btn-2line">最近论文 <br clear="none"/> ${recentSize } </t:eventlink> -->
+			<t:eventlink event="select" zone="authorPubZone" context="literal:recent" class="active btn btn-small btn-2line">最近10篇论文 </t:eventlink>
+			<t:loop source="yearList" value="year">
+				<t:eventlink event="select" zone="authorPubZone" context="year" class="btn btn-mini">${year } (${publicationSize})</t:eventlink>
+			</t:loop>
+		</div>
+		<div class="span12">
+			<t:zone elementName="div" t:id="authorPubZone">
+				<t:publication.list publicationList="showPubList" personId="personId"></t:publication.list>
+			</t:zone>
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery(".fn_year_select a").click(function(){
+			jQuery(".fn_year_select a").removeClass("active");
+			jQuery(this).addClass("active");
+		});
+	</script>
+</t:container>

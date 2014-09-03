@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div id="header" style="margin-bottom: 4px;">
+		<div class="navbar navbar-static-top navbar-inverse aminer-navi">
+			<div class="navbar-inner">
+				<div class="container">
+					<a href="/" class="brand" style="text-decoration: none;margin-top:2px;margin-left:-34px;"> <span style="color:rgb(255, 255, 255); font-family: 黑体; font-size: 20px;">校园</span>
+						<span style="color:rgb(67 , 151, 251); font-family: 黑体; font-size: 20px;">搜索</span>
+					</a>
+					<ul class="nav">
+						<li><t:pagelink page="department" title="院系概况">院系概况</t:pagelink></li>
+						<!--<li><t:pagelink page="prominentPersons/view" title="杰出人才">杰出人才</t:pagelink></li>  -->
+						 <li><t:pagelink page="prominent/personsview" title="杰出人才">杰出人才</t:pagelink></li>
+						 <li><t:pagelink page="advancedSearch" title="高级搜索">高级搜索</t:pagelink></li>
+						 <li><a title="系统介绍" href="/res/down/system_introduction.pdf">系统介绍</a></li>
+					</ul>
+					<div class="btn-group pull-right" style="margin-right: 10px;">
+						<t:if test="user" negate="true">
+							<t:pagelink page="user/login" class="btn btn-primary">
+								<i class="icon-user icon-white"></i> 登录&nbsp;&nbsp;
+							</t:pagelink>
+						</t:if>
+						<t:if test="user">
+							<a class="btn btn-primary" href="/user.do?m=home"><i class="icon-user icon-white"></i> ${user.username }</a>
+							<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="height: 20px;" href="#"><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="nav-header">账户功能</li>
+								<t:if test="isAdmin()">
+									<li><t:pagelink page="admin">Admin Tools</t:pagelink> </li>
+									<li class="divider"></li>
+								</t:if>
+								<li><t:pagelink page="User/ResetPassword">Reset Password</t:pagelink> </li>
+								<li><t:actionlink t:id="signOut">登出</t:actionlink></li>
+							</ul>
+						</t:if>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-52592932-1', 'auto');
+  	  ga('send', 'pageview');
+	</script>
+	
+</t:container>

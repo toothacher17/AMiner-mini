@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<t:zone elementName="div" t:id="profileZone">
+		<t:if test="isEdit">
+			<p:else>
+				<div class="row-fuild" id="profile_show">
+					<div class="row-fluid">
+						<div class="page-header small narrow">
+							<div class="right space-preserve">
+								<t:if test="homepage">
+									<a shape="rect" target="_blank" class="btn light" style="height: 16px;" href="${homepage }"><i class="icon-home"></i></a>
+								</t:if>
+								<t:if test="author_id">
+									<a shape="rect" class="btn btn-small light" target="_blank" href="http://arnetminer.org/person/-${author_id }.html">Am</a>
+								</t:if>
+							</div>
+							<h1 class="pull-leftd">${name }</h1>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="row-fluid">
+						<dl class="dl-horizontal dl-left author-contact-card">
+							<dt>&nbsp;</dt>
+							<dd>${getAffiliation() }&nbsp;</dd>
+							<dt><span class="icon-map-marker"></span></dt>
+							<dd>${location }&nbsp;</dd>
+							<dt>P</dt>
+							<dd>${phone }&nbsp;</dd>
+							<dt><span class="icon-envelope"></span></dt>
+							<dd>${email }&nbsp;</dd>
+							<dt style="line-height:28px;"></dt>
+							<dd style="text-align:right;">
+								<t:if test="user">
+									<t:actionlink zone="^" t:id="editProfile" context="personId" class="btn btn-tiny btn-success btn-clear pull-right">EDIT PROFILE</t:actionlink>
+								</t:if>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</p:else>
+			<div class="span4" style="width:360px;">
+				<div class="row-fluid" style="" id="profile_edit">
+					<t:form t:id="profileEditForm" zone="profileZone">
+						<t:textfield value="personId" translate="integer" type="hidden"></t:textfield>
+						<dl class="dl-horizontal dl-left author-profile-edit">
+							<dt>姓名:</dt>
+							<t:if test="user?.admin">
+								<dd><t:textfield value="name" translate="string"></t:textfield></dd>
+								<p:else>
+									<dd><span>${name }</span></dd>
+								</p:else>
+							</t:if>
+							<dt>职务:</dt>
+							<dd><t:textfield value="position" translate="string"></t:textfield></dd>
+							<dt>办公地点:</dt>
+							<dd><t:textfield value="location" translate="string"></t:textfield></dd>
+							<dt>电话:</dt>
+							<dd><t:textfield value="phone" translate="string"></t:textfield></dd>
+							<dt>邮箱:</dt>
+							<dd><t:textfield value="email" translate="string"></t:textfield></dd>
+							<dt>个人主页:</dt>
+							<dd><t:textfield value="homepage" translate="string"></t:textfield></dd>
+							<dt>Aminer ID:</dt>
+							<dd><t:textfield value="author_Id " translate="Integer"></t:textfield></dd>
+							<dd class="align-right">
+								<t:submit value="Save Changes" class="btn btn-mini btn-success" style="margin-right: 2px;"></t:submit>
+								<t:actionlink zone="^" t:id="cancel" context="personId" class="btn btn-mini">Cancel</t:actionlink>
+							</dd>
+						</dl>
+					</t:form>
+				</div>
+			</div>
+		</t:if>
+	</t:zone>
+	
+		
+
+</t:container>

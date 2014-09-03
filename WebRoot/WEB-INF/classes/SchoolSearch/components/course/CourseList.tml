@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<t:delegate to="block:normal"></t:delegate>
+	<t:block t:id="normal">
+		<ul id="pub_list" class="single-line-list"> 
+			<t:loop source="getCourseList()" value="course" index="index">
+				<li style="line-height: 25px;">
+					<div style="margin-left:0px;margin-right:4px;float: none; width: auto; min-height: 25px;" class="autospan">
+						<span>
+							<a href="${course.url }" target="_blank">${course.courseName } </a> 
+							<!-- <t:pagelink page="course" context="courseList.get(0).getId()">${CourseList.get(0).courseName }</t:pagelink> -->
+							<span class="affiliation muted pull-right" >${course.teacherName}</span>
+						</span>
+					</div>
+				</li>
+			</t:loop>
+		</ul>
+	</t:block>
+	
+	<t:block t:id="rich">
+		<ul id="pub_list" class="rich-info-list publication-list rich-list small"> 
+			<t:loop source="courseIdList" value="courseGroup" index="index">
+				<li class="s-item auto-hide-container" >
+					<div style="margin-left:0px;margin-right:0px;float: none; width: auto" class="autospan">
+							<h3>${CourseList.get(0).courseName }</h3>
+							<p class="affiliation muted" >授课老师：${CourseList.get(0).teacherName}</p>
+						<div class="p">
+							<div class="auto-hide-container author-interests-line keywords-line" style="margin-left: 0px; ">
+								<t:loop source="CourseList" value="course">
+									<p shape="rect" class="label label-info capitalize light">
+										<a href="${course.url }" target="_blank">${course.semesterName } </a> 
+									</p><br/>
+								</t:loop>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="pull-right auto-hide fade in" style="margin-top: -22px; margin-right: 5px;">
+							<div class="btn btn-tiny btn-success btn-clear" id="show">Show more</div>
+							<div class="btn btn-tiny btn-success btn-clear" id="hide">Hide</div>
+						</div>
+					</div>
+				</li>
+			</t:loop>
+		</ul>
+	</t:block>
+	<script type="text/javascript">
+		jQuery(function(){
+			applyHiddenCourseDisplay();
+		});
+	</script>
+</t:container>

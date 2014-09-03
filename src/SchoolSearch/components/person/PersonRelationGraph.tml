@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div class="box box-mini notify">
+		<div class="box-header">关系网络</div>
+		<div class="box-body">
+			<div class="row-fluid line" style="width:362px;">
+				<div class="span12">
+					<svg width="362" height="362" id="svg_egonetwork">
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="box-footer">
+			<span style="background-color: rgb(55, 126, 184);" class="badge">自己</span>
+			<span class="badge" style="background-color: rgb(228, 26, 28);">导师</span>
+			<span class="badge" style="background-color: rgb(77, 175, 74);">同事</span>
+			<span class="badge" style="background-color: rgb(255, 127, 0);">学生</span>
+		</div>
+	</div>
+	
+		
+
+</t:container>

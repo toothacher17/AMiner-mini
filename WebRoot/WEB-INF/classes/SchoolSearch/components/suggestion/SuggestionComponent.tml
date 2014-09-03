@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<t:if test = "showSuggestionType()">
+		<div id="suggestion">
+			<div class="row-fluid">
+				<div class="span12" id="suggestion_div">
+					<table id="st" cellspacing="0" cellpadding="2">
+						<tbody id="suggest_builder">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	<p:else>
+		<div id="suggestion" class="subheader">
+			<div class="row-fluid">
+				<div class="span12" id="suggestion_div">
+					<table id="st" cellspacing="0" cellpadding="2">
+						<tbody id="suggest_builder">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>	
+	
+	
+	</p:else>
+	</t:if>
+</t:container>

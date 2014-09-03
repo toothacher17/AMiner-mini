@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="src" path="independent"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/antlr-runtime-3.3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/plastic-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-core-5.3.7.jar" sourcepath="D:/share/yxy/data/play/apache-tapestry-5.3.7-sources"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-ioc-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry5-annotations-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-func-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-jmx-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-jpa-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-json-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/persistence-api-1.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-javadoc-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-yuicompressor-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javassist.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.10.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javacsv-2.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-analyzers-common-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-analyzers-icu-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-analyzers-smartcn-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-analyzers-stempel-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-analyzers-uima-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-core-4.3.0.jar" sourcepath="C:/Users/yxy/Downloads/lucene-4.3.0/lucene-4.3.0"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-highlighter-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-memory-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-queries-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-queryparser-4.3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-test-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-upload-5.3.7.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-fileupload-1.3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/other/pinyin4j-2.5.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/codec.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-codec-1.8-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-codec-1.8-sources.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-codec-1.8-test-sources.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-codec-1.8-tests.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-codec-1.8.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/htmllexer.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/htmlparser.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/other/daoGenerator.jar"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

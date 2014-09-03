@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div class="linkbox">
+		<div class="linkarea">
+			<span class="key">热搜人物:&nbsp;</span>
+			<t:pagelink page="person" context="literal:2205">顾秉林</t:pagelink>,
+			<t:pagelink page="person" context="literal:3636">施一公</t:pagelink>,
+			<!-- <t:pagelink page="person" context="literal:2216">姚期智</t:pagelink>, -->
+			<t:pagelink page="person" context="literal:60">张钹</t:pagelink>
+		</div>
+		<div class="linkarea">
+			<span class="key">热搜词条:&nbsp;</span>
+			<t:pagelink page="search" context="literal:社会网络">社会网络</t:pagelink>,
+			<t:pagelink page="search" context="literal:机器学习">机器学习</t:pagelink>,
+			<t:pagelink page="search" context="literal:人工智能">人工智能</t:pagelink>
+			<!-- <t:pagelink page="search" context="literal:多媒体">多媒体</t:pagelink>, -->
+			<!-- <t:pagelink page="search" context="literal:搜索">搜索</t:pagelink> -->
+		</div>
+		<div style="margin-top:20px;" class="linkarea">
+		</div>
+	</div>
+</t:container>

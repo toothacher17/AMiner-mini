@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<h1 class="ly_form_tit">注册</h1>
+	<p>&nbsp;</p>
+	<t:zone elementName="div" t:id="registerZone">
+		<t:form zone="registerZone" class="well" t:id="registerForm">
+			<t:if test="errorMessage">
+				<div class="t-error" style="margin-top:-10px;margin-bottom:10px;">
+					<div class="t-banner">错误</div>
+					<ul> <li>${errorMessage }</li> </ul>
+				</div>
+			</t:if>
+			<fieldset>
+				<div class="control-group">
+					<i class="icon-user"></i>
+					<t:textfield value="username" translate="string" placeholder="用户名" t:id="username" size="30"></t:textfield>
+				</div>
+				<div class="control-group">
+					<i class="icon-envelope"></i>
+					<t:textfield value="email" translate="string" placeholder="邮箱地址" t:id="email" size="30"></t:textfield>
+				</div>
+				<div class="control-group">
+					<i class="icon-lock"></i>
+					<t:passwordfield value="password" translate="string" placeholder="输入密码" t:id="password" size="30"></t:passwordfield>
+				</div>
+				<div class="control-group">
+					<i class="icon-lock"></i>
+					<t:passwordfield value="passwordVerify" translate="string" placeholder="验证密码" t:id="passwordVerify" size="30" ></t:passwordfield>
+				</div>
+				<div class="control-group">
+					<t:submit class="btn btn-inverse" value="注册"></t:submit>
+				</div>
+			</fieldset>
+		</t:form>
+	</t:zone>
+</t:container>

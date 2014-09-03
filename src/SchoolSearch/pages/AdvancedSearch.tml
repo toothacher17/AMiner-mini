@@ -1,0 +1,64 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="${title}" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index" t:query="mainquery" t:withsubheader="false">
+	<style>
+		.brdd {height: 5px;}
+	</style>
+	<div class="container">
+		<div class="row" style="margin-bottom:10px;margin-top:12px;">
+			<div class="span9">
+				<div class="floatl">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<t:form>
+				<dl class="dl-horizontal dl-left">
+					<dt>搜索关键词</dt>
+					<dd><t:textfield value="mainquery" translate="string"></t:textfield></dd>
+					<dd class="brdd"><br/></dd>
+					<dt>职位</dt>
+					<t:radiogroup value="selectedPosition" encoder="stringValueEncoder">
+						<t:loop source="personPositionList" value="singlePosition">
+							<dd><t:radio value="singlePosition" class="fn_position_option"></t:radio><span>${singlePosition }</span> </dd>
+						</t:loop>
+						<dd><t:radio value="literal:其他" class="fn_position_optionOther"></t:radio><span>其他</span> </dd>
+					</t:radiogroup>
+					
+					<dd style="display:none;" id="otherPosition"><t:textfield value="personPosition" translate="string"></t:textfield></dd>
+					<dd class="brdd"><br/></dd>
+					<dt>特殊头衔</dt>
+					<t:radiogroup value="selectedTitle" encoder="stringValueEncoder">
+						<t:loop source="personTitleList" value="singleTitle">
+							<dd><t:radio value="singleTitle" class="fn_title_option"></t:radio><span>${singleTitle }</span> </dd>
+						</t:loop>
+						<dd><t:radio value="literal:其他" class="fn_title_optionOther"></t:radio><span>其它</span> </dd>
+					</t:radiogroup>
+					<dd style="display:none;" id="otherTitle"><t:textfield value="personTitle" translate="string"></t:textfield></dd>
+					<dd class="brdd"><br/></dd>
+					<dd>
+					<t:submit value="搜索" class="btn btn-primary" style="width:100px;"></t:submit>
+					</dd>
+				</dl>
+			
+			</t:form>
+		</div>
+
+		<div class="row blank2"></div>
+	</div>
+	<script type="text/javascript">
+		jQuery(".fn_title_option").click(function(){
+			jQuery("#otherTitle").hide();
+		});
+		jQuery(".fn_title_optionOther").click(function(){
+			jQuery("#otherTitle").show();
+		});
+		jQuery(".fn_position_option").click(function(){
+			jQuery("#otherPosition").hide();
+		});
+		jQuery(".fn_position_optionOther").click(function(){
+			jQuery("#otherPosition").show();
+		});
+		
+	</script>		
+</html>

@@ -1,0 +1,22 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" t:fullwidth="false"
+	t:title="校园搜索" t:meta_keywords="" t:meta_description=""
+	t:currentPage="Index">
+
+	<div style="clear:both; height: 10px;" class="clear"></div>
+	
+	<div class="container-fluid" id="container">
+		<div class="row-fluid">
+			<div class="span7">
+				<t:publication.list publicationList="publications"/>
+			</div>
+			<div class="span5">
+				
+			</div>
+		</div>
+	</div>
+	
+	<div style="clear:both; height: 10px;" class="clear"> </div>
+
+
+</html>

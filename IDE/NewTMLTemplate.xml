@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="jsp_new" deleted="false" description="TML template with html markup and  Tapestry components completion" enabled="true" name="New Tapestry TML File">&lt;?xml version="1.0" encoding="${encoding}"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt; 
+&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter"&gt;
+
+      &lt;!-- Most of the page content, including &lt;head&gt;, &lt;body&gt;, etc. tags, comes from Layout.tml --&gt;
+
+&lt;/html&gt;</template></templates>

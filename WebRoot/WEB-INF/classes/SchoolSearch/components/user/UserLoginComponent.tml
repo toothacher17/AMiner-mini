@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<h1 class="ly_form_tit">登陆</h1>
+	<p>&nbsp;</p>
+	<t:zone elementName="div" t:id="loginZone">
+		<t:form zone="loginZone" class="well" t:id="loginForm">
+			<t:if test="errorMessage">
+				<div class="t-error" style="margin-top:-10px;margin-bottom:10px;">
+					<div class="t-banner">错误</div>
+					<ul> <li>${errorMessage }</li> </ul>
+				</div>
+			</t:if>
+			<fieldset>
+				<div class="control-group">
+					<i class="icon-user"></i>
+					<t:textfield value="username" translate="string" placeholder="用户名" t:id="username" size="30"></t:textfield>
+				</div>
+				<div class="control-group">
+					<i class="icon-lock"></i>
+					<t:passwordfield value="password" translate="string" placeholder="密码" t:id="password" size="30"></t:passwordfield>
+				</div>
+				<div class="control-group">
+					<label for="rememberLogin" class="checkbox">
+						<t:checkbox value="rememberLogin"></t:checkbox>
+						<img style="display: none;" id="rememberLogin_icon" class="t-error-icon" alt="" src="/assets/3.22/core/spacer.gif"/> 记住我两周
+					</label>
+				</div>
+				<div class="control-group">
+					<t:submit class="btn btn-inverse" value="登陆"></t:submit>
+				</div>
+				<div class="control-group" style="display: none;">
+					<a href="/user/resetpassword">忘记密码？</a>
+				</div>
+			</fieldset>
+		</t:form>
+	</t:zone>
+</t:container>

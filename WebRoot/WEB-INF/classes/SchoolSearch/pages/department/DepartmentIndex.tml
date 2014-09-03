@@ -1,0 +1,29 @@
+			<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="${title}" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index">
+	
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="row-fluid">
+					<div class="box box-mini box-silver">
+						<div class="box-header">
+							<div style="margin-top:3px;display:none" class="pull-right">
+								<a id="any" title="Change to another APP"
+									class="btn btn-mini btn-action" shape="rect"
+									href="javascript:location.href=location.href"><span
+									class="icon-th-list"></span> </a>
+							</div>
+							<h2 style="text-align:center;" class="small-margin">院系概况</h2>
+						</div>
+						<div class="box-body">
+							<div id="board" class="container-fluid none">
+							</div>
+						</div>
+						<div class="box-footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</html>

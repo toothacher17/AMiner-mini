@@ -1,0 +1,115 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" t:fullwidth="false"
+	t:title="校园搜索-管理工具" t:meta_keywords="" t:meta_description=""
+	t:currentPage="Index">
+
+<div style="clear:both; height: 10px;" class="clear"></div>
+<div class="container-fluid" id="container">
+	<div class="row-fluid">
+		<div style="height:0.5em;"></div>
+	</div>
+	<div class="row-fluid">
+		<div class="fix-span3 pull-left">
+			<div style="padding: 8px 0;" class="well">
+				<ul class="nav nav-list">
+					<li class="nav-header">Administration</li>
+					<li><a shape="rect" href="/admin">Overview</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/manageusers">Manage
+							Users</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/manageconstants">Manage
+							Constants</a>
+					</li>
+				</ul>
+			</div>
+			<div style="padding: 8px 0;" class="well">
+				<ul class="nav nav-list">
+					<li class="nav-header">Data Management</li>
+					<li class="active">
+						<a shape="rect" href="/admin/mergePerson">Merge Persons</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/author/reload">Reload
+							Author</a>
+					</li>
+					<li class=""><a shape="rect"
+						href="/admin/tool/indexmanagement">Building Index</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/avatarthumbnailtool">â
+							Avatar Thumbnail Tool</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/sortpersonnamestool">â
+							Sort Person Names</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="autospan left-space3">
+			<div class="container-fluid pull-left">
+				<div class="page-header small">
+					<h1>Merge Persons</h1>
+				</div>
+				<div class="container-fluid">
+					<div id="content">
+						<t:form zone="searchContentZone" t:id="authorSearchForm">
+							<dl class="dl-horizontal">
+								<dt>用ID搜索</dt>
+								<dd><t:textfield value="IDString" translate="string"></t:textfield>&spnb;&spnb;(*高优先级)</dd>
+								<dt>用姓名搜索</dt>
+								<dd><t:textfield value="NameString" translate="string"></t:textfield></dd>
+								<dd><t:submit class="btn btn-primary" value="Search"></t:submit></dd>
+							</dl>
+						</t:form>
+						<br/>
+						<t:zone elementName="div" t:id="searchContentZone">
+							<t:if test="personList">
+							<t:form t:id="selectMergeForm">
+								<ul class="rich-info-list null author-list subpage" style="">
+									<t:loop source="personList" value="person" formState="NONE" index="index">
+										<li class="s-item row-fluid">
+											<div style="width:20px;" class="fix-span1 pull-left">
+												<div class="head">
+													<t:checkbox value="checkMergeValue"></t:checkbox>
+												</div>
+											</div>
+											<div style="width:80px;" class="fix-span1 pull-left">
+												<div class="head">
+													<t:pagelink page="person" context="person.id">
+														<img alt="${person.name }" src="${personProfile.avatar }" class="thumbnail head" style="width: 80px;"/>
+													</t:pagelink>
+												</div>
+											</div>
+											<div style="margin-left:100px;margin-right:0px;" class="autospan">
+												<div class="container-fluid mini">
+													<div class="pull-right">
+														<div class="space-preserve">
+															<t:if test="personprofile.homepage">
+																<a shape="rect" target="_blank" class="btn light" style="height: 16px;" href="${personprofile.homepage }"><i class="icon-home"></i></a>
+															</t:if>
+															<t:if test="personprofile.author_id">
+																<a shape="rect" class="btn btn-small light" target="_blank" href="http://arnetminer.org/person/-${personprofile.author_id }.html">Am</a>
+															</t:if>
+														</div>
+													</div>
+													<h3 style="margin-left:12px;">
+														<t:pagelink page="person" context="person.id" class="title">${person.name } </t:pagelink>
+													</h3>
+													<p style="margin-left:12px" class="affiliation muted"> ${person.id}  </p>
+													<p style="margin-left:12px" class="affiliation muted"> ${person.name_alias}  </p>
+													<p style="margin-left:12px" class="affiliation muted"> ${personprofile.location}  </p>
+												</div>
+											</div>
+										</li>
+									</t:loop>
+								</ul>
+								<t:submit value="Merge" class="btn btn-warning btn-large"></t:submit>
+							</t:form>
+							</t:if>
+						</t:zone>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

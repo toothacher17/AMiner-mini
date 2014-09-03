@@ -1,0 +1,138 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" t:fullwidth="false"
+	t:title="校园搜索" t:meta_keywords="" t:meta_description=""
+	t:currentPage="Index">
+
+<div style="clear:both; height: 10px;" class="clear"></div>
+<div class="container-fluid" id="container">
+	<div class="row-fluid">
+		<div style="height:0.5em;"></div>
+	</div>
+	<div class="row-fluid">
+		<div class="fix-span3 pull-left">
+			<div style="padding: 8px 0;" class="well">
+				<ul class="nav nav-list">
+					<li class="nav-header">Administration</li>
+					<li class="active"><a shape="rect" href="/admin">Overview</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/manageusers">Manage
+							Users</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/manageconstants">Manage
+							Constants</a>
+					</li>
+				</ul>
+			</div>
+			<div style="padding: 8px 0;" class="well">
+				<ul class="nav nav-list">
+					<li class="nav-header">Data Management</li>
+					<li class="">
+						<a shape="rect" href="/admin/mergePerson">Merge Persons</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/author/reload">Reload
+							Author</a>
+					</li>
+					<li class=""><a shape="rect"
+						href="/admin/tool/indexmanagement">Building Index</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/avatarthumbnailtool">√
+							Avatar Thumbnail Tool</a>
+					</li>
+					<li class=""><a shape="rect" href="/admin/sortpersonnamestool">√
+							Sort Person Names</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="autospan left-space3">
+			<div class="container-fluid pull-left">
+				<div class="page-header small">
+					<h1>Overview of Arnetminer.org</h1>
+				</div>
+				<div class="container-fluid">
+					<div id="content">
+						<t:zone elementName="div" t:id="tableZone">
+							<table class="table table-bordered table-striped">
+								<tbody>
+									<tr align="center">
+										<th width="20px">id</th>
+										<th width="5%">
+											<t:form t:id="uidForm" zone="^">
+												<t:textfield value="requiredTableName" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredColumnId" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredField" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredState" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredUid" placeHolder = "uid" translate="integer"></t:textfield>
+											</t:form>
+										</th>
+										<th width="10%">
+											<t:form t:id="tableNameForm" zone="^">
+												<t:textfield value="requiredUid" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredColumnId" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredField" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredState" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredTableName" placeHolder="table" translate="string"></t:textfield>
+											</t:form>
+										</th>
+										<th width="10%">
+											<t:form t:id="columnIdForm" zone="^">
+												<t:textfield value="requiredUid" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredTableName" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredField" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredState" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredColumnId" placeHolder="column_id" translate="integer"></t:textfield>
+											</t:form>
+										</th>
+										<th width="10%">
+											<t:form t:id="fieldForm" zone="^">
+												<t:textfield value="requiredUid" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredTableName" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredColumnId" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredState" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredField" placeHolder="field" translate="string"></t:textfield>
+											</t:form>
+										</th>
+										<th width="10%">old_value</th>
+										<th width="10%">new_value</th>
+										<th width="10%">ip</th>
+										<th width="10%">
+											<t:form t:id="stateForm" zone="^">
+												<t:textfield value="requiredUid" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredTableName" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredColumnId" translate="integer" type="hidden"></t:textfield>
+												<t:textfield value="requiredField" translate="string" type="hidden"></t:textfield>
+												<t:textfield value="requiredState" placeHolder="state" translate="integer"></t:textfield>
+											</t:form>
+										</th>
+										<th width="10%">time</th>
+										<th width="10%">action</th>
+									</tr>
+									<t:loop source="allLogList" value="log">
+										<tr>
+											<td>${log.id }</td>
+											<td>${log.uid }</td>
+											<td>${log.table }</td>
+											<td>${log.column_id }</td>
+											<td>${log.field }</td>
+											<td>${log.old_value }</td>
+											<td>${log.new_value }</td>
+											<td>${log.ip }</td>
+											<td>${log.state }</td>
+											<td>${log.time }</td>
+											<td>
+												<t:if test="log.state" negate="true">
+													<t:eventlink class="btn btn-primary" event="rollBack" context="[log.id,requiredUid,requiredTableName,requiredColumnId,requiredField,requiredState]" zone="tableZone">RollBack</t:eventlink>
+												</t:if>
+											</td>
+										</tr>
+									</t:loop>
+								</tbody>
+							</table>
+						</t:zone>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

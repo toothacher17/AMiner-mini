@@ -1,0 +1,27 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="${title}" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index" t:query="query">
+	
+	<div class="container">
+		<div class="row" style="margin-bottom:10px;margin-top:12px;">
+			<div class="span9">
+				<div class="floatl">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span8 no-boder" style="width:640px">
+				<t:search.person query="query"></t:search.person>
+			</div>
+			<div class="span4">
+				<t:search.course query="query"></t:search.course>
+				<br/>
+				<div class="clear"></div>
+				<t:search.publication query="query"></t:search.publication>
+			</div>
+		</div>
+
+		<div class="row blank2"></div>
+	</div>
+		
+</html>

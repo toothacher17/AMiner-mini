@@ -1,0 +1,16 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="prop:title" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index" t:withSubheader="false">
+	
+	<div id="container" class="container">
+		<div class="row">
+			<div class="span4 offset1">
+				<t:user.loginComponent referer="referer"></t:user.loginComponent>
+			</div>
+			
+			<div class="span4 offset2">
+				<t:user.registerComponent referer="referer"></t:user.registerComponent>
+			</div>
+		</div>
+	</div>
+</html>

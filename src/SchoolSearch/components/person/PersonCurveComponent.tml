@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+		<div class="row">
+			<div class="row-fluid">
+				<div class="span8" >
+					<div class="section-header"><h3>论文话题分布曲线:</h3></div>
+					<div class="" id="vis_pub_line_chart" style="margin:0px 0" ></div>
+				</div>
+				<div class="span4 space-preserve">
+					<div class="section-header"><h3>话题关键词:</h3></div>
+					<span class="label vis_pub_term" >All</span>
+					<t:loop source="selectedWordList" value="wordName">
+						<span class="label vis_pub_term" >${wordName }</span>
+					</t:loop>
+				</div>
+			</div>
+		</div>
+</t:container>

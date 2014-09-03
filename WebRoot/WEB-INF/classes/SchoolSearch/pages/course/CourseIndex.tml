@@ -1,0 +1,178 @@
+			<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="${course.courseName }" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index">
+	
+	<div class="container">
+		<t:if test="course">
+			<div class="row">
+				<div class="span6">
+					<div class="row-fluid" style="margin-top:4px">
+						<h3 class="pull-lefted">课程信息</h3>
+						<div class="row-fluid">
+						<ul>
+							<li style="margin-top:4px;" >
+								<div class="p">
+									<h4>课程名称:   《${course.courseName}》</h4> 
+								</div><br/>	
+							</li>
+							<li style="margin-top:4px;" >
+								<div class="p">	
+									<h4>  课程学时：${course.class_hour}</h4>
+								</div><br/>	
+							</li>
+							<li style="margin-top:4px;" >
+								<div class="p">	
+									<h4>  授课老师：${course.teacherName}</h4>
+								</div><br/>	
+							</li>
+							<li style="margin-top:4px;" >
+								<div class="p">
+									<h4>课程学分：${course.credit}</h4>
+								</div><br/>	
+							</li>
+							<li style="margin-top:4px;" >
+								<div class="p">
+									<h4>考查方式：${course.checking}</h4>
+								</div><br/>	
+							</li>
+							<li style="margin-top:4px;" >
+								<div class="p">	
+									<h4>开课学期：${course.semesterName }</h4>
+								</div><br/>	
+							</li>
+							<li style="margin-top:4px;" >
+								<div class="p">	
+									<h4>开课院系：${course.majorName }</h4>
+								</div><br/>	
+							</li>
+							<li style="margin-top:4px;width:350px;" >
+								<div class="p">
+									<h4>课程描述:</h4>
+									<t:if test = "courseDescriptionIsNull()">
+										<div class="pull-right auto-hide fade in" style="margin-top: -22px; margin-right: 5px;">
+											<div class="btn btn-tiny btn-success btn-clear" id="show">展开</div>
+											<div class="btn btn-tiny btn-success btn-clear" id="hide">收起</div>
+										</div>
+										<div style="font-family:黑体; font-size:15px; margin-left:30px;" >暂无课程描述</div> 
+									<p:else>
+										<div class="pull-right auto-hide fade in" style="margin-top: -22px; margin-right: 5px;">
+											<div class="btn btn-tiny btn-success btn-clear" id="show">展开</div>
+											<div class="btn btn-tiny btn-success btn-clear" id="hide">收起</div>
+										</div>
+										<div style="font-family:黑体; font-size:15px; margin-left:30px;" >${course.courseDescription}</div> 
+									</p:else>
+									</t:if>
+								</div>
+							</li>
+						</ul>
+						</div>
+					</div>
+					<div class="row-fluid" >
+					 	<br/>
+					 	<div style="margin-left: 240px;">
+						 	<p shape="rect" class="label label-info capitalize light" style="margin-left:30px;">
+								<a href="${course.url}">更多课程与教师信息... </a>
+							</p>
+					 	</div>
+					</div>
+				</div>	
+				
+				<t:if test="courseTeachers">		
+					<div class="span6">
+						<t:loop source="courseTeachers" value="person">
+							<div style="margin-top:4px;" class="span4">
+								<h3>授课教师信息</h3><br/>
+								<div class="row-fluid">
+									<div style="margin-top:4px;" class="span4">
+										<t:person.avatar personId="person.id"></t:person.avatar>
+									</div><br/><br/>
+									<div class="row-fluid" id="profile_show" style="margin-top: -45px;margin-left: 188px;">
+										<div class="row-fluid">								
+											<div class="page-header small narrow">
+												<div class="right space-preserve">
+													<t:if test="getThePersonProfile().homepage">
+														<a shape="rect" target="_blank" class="btn light" style="height: 16px;" href="${getThePersonProfile().homepage }"><i class="icon-home"></i></a>
+													</t:if>
+													<t:if test="getThePersonProfile().author_id">
+														<a shape="rect" class="btn btn-small light" target="_blank" href="http://arnetminer.org/person/-${getThePersonProfile().author_id }.html">Am</a>
+													</t:if>
+												</div> 
+												<h4 class="pull-lefted">授课教师：<t:pagelink page="person" context="person.id">${person.name}</t:pagelink></h4>
+											</div>
+										</div>
+										<div class="clear"></div>
+										<div class="row-fluid" style="margin-top:-139px;">
+											<h4 class="pull-lefted">授课教师基本信息：</h4>
+											<dl class="dl-horizontal dl-left author-contact-card">
+												<dt></dt>
+												<dd>${getThePersonProfile().position }</dd>
+												<dt><span class="icon-map-marker"></span></dt>
+												<dd>${getThePersonProfile().location }</dd>
+												<dt>P</dt>
+												<dd>${getThePersonProfile().phone }</dd>
+												<dt><span class="icon-envelope"></span></dt>
+												<dd>${getThePersonProfile().email }</dd>
+												<dt style="line-height:28px;"></dt>
+												<dd style="text-align:right;">
+												</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row-fluid" style="width:400px;">										
+										<h4 >该老师所有课程</h4><br/>
+										<div  style="margin-top: -16px;">
+											<ul >
+												<t:loop source="getTheRelatedCourseList()" value="relatedCoursePartList">
+													<li>
+														<div >
+															<div style="font-family:黑体; font-size:15px; margin-left:30px;" ><h4>《${relatedCoursePartList.get(0).courseName }》</h4></div>
+															<div class="pull-right auto-hide fade in" style="margin-top: -32px; margin-right: -82px;">
+																<div class="btn btn-tiny btn-success btn-clear" id="out">展开</div>
+																<div class="btn btn-tiny btn-success btn-clear" id="in">收起</div>
+															</div>
+														</div>
+														<div class="sapn4" style="margin-left:20px;">
+															<t:loop source="relatedCoursePartList" value="relatedCourse">		
+																<p shape="rect" class="label label-info capitalize light" style="margin-left:30px;">
+																	<t:pagelink page="course" context="relatedCourse.id">${relatedCourse.semesterName }</t:pagelink>
+																</p><br/>
+															</t:loop>
+														</div>
+														<div class="clear"></div>
+													</li>
+												</t:loop>
+											</ul>
+									 	</div>
+									 </div>
+									 
+								</div>
+							</div>
+						</t:loop>
+					</div>
+				<p:else>
+					<div class="span4">
+						<div style="margin-top:4px;" class="span4">
+							<h3>暂无授课教师信息！</h3><br/>
+						</div>
+					</div>
+					
+				
+					
+				</p:else>
+				</t:if>
+				
+			</div>
+		
+			
+		<p:else>
+			<h2>出错了！该课程不存在</h2>
+		</p:else>
+			
+		</t:if>
+    </div>
+    <script type="text/javascript">
+		jQuery(function(){
+			applyHiddenCourseDisplay();
+		});
+    </script>
+</html>

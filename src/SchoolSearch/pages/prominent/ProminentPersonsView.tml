@@ -1,0 +1,135 @@
+			<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="${titleName}" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index">
+	
+	<div class="container">
+		<div class="row">
+			<div class="span3 no-boder">
+				<div class="box box-mini box-blue">
+					<div class="box-header">
+						<h4 class="small-margin">杰出人才头衔</h4>
+					</div>
+					<div class="box-body">
+						<div class="container-fluid none">
+							<div class="row-fluid">
+								<ul class="nav nav-list" id="index_UL" style="padding-top: 10px;">
+									<t:loop source="titleIdList" value="titleIdTemp" >
+										<li>
+											 <t:pagelink  id="${titleIdTemp }" page="prominent/personsview" context="titleIdTemp" class="btn btn-link " style="font-size:10px;padding:0px;"><h6>${getTitleNameByTitleId() }</h6></t:pagelink>
+										</li>
+									</t:loop>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="box-footer"></div>
+				</div>
+			</div>
+			
+			<div style="width:640px" class="span9">
+				<div class="row-fluid">
+						<div class="box box-mini box-silver">
+							<t:if test="flag">
+								<div class="box-header">
+									<div style="margin-top:3px;display:none" class="pull-right">
+										<a id="any" title="Change to another APP" class="btn btn-mini btn-action" shape="rect" href="javascript:location.href=location.href"><span class="icon-th-list"></span> </a>
+									</div>
+									<h2 style="text-align:center;" class="small-margin">${titleName }</h2>
+								</div>
+								<div class="box-body">
+									<div class="container-fluid none">
+										<ul class="rich-info-list null author-list subpage" id="0">
+											<t:loop source="getTheSchoolList()" value="schoolName">
+												<li class="s-item row-fluid">
+													<legend> ${schoolName }</legend>
+													<ul class="inline">
+														<t:loop source="getThePersonInSchool()" value="person">
+															<li>
+																<div class="img-polaroid" style="text-align: center;">
+																	<div style="height: 150px;">
+																		<t:pagelink page="person" context="person.id">
+																			<img width="100px" alt="${person.name} " src="${getAvatar() }" style="margin-top: auto;"></img>
+																		</t:pagelink>
+																	</div>
+																		<t:pagelink page="person" context="person.id" style="display:block;">${person.name } </t:pagelink>
+																</div>
+															</li>
+														</t:loop>
+													</ul>
+												</li>		
+											</t:loop>
+										</ul>
+									</div>
+								</div>
+								
+							<p:else>
+								<div class="box-header">
+								<div style="margin-top:3px;display:none" class="pull-right">
+									<a id="any" title="Change to another APP" class="btn btn-mini btn-action" shape="rect" href="javascript:location.href=location.href"><span class="icon-th-list"></span> </a>
+								</div>
+								<h2 style="text-align:center;" class="small-margin">清华大学杰出人才</h2>
+								</div>
+									
+								<div class="con_l">
+           	  					<table border="0" cellpadding="0" cellspacing="0" width="620">
+								<tbody>
+                      			<tr>
+                        			<td colspan="5" height="112">
+                        			<p>&nbsp;</p>
+                        			<p>　　清华大学培育和凝聚了一批又一批高水平的专家学者。近年来，学校遵循“引进与培养并举”的方针，加强青年教师队伍建设，在国内外选聘优秀人才，师资队伍水平稳步提高。</p>
+                        			</td>
+                				</tr>
+                      			<tr>
+                        			<td colspan="5" class="article">
+                          			<!--<p class="re_line" align="right"></p>  -->
+                          			<div  style="margin-left:20px; height:100px">
+									<h4>两院院士</h4>
+										院士是学术界给予科学家的最高荣誉称号，我校目前拥有中国科学院院士41名、中国工程院院士33名，其中包括2名双院院士。
+									</div>
+									<div  style="margin-left:20px; height:100px">
+									<h4>长江学者奖励计划入选者</h4>
+										"长江学者奖励计划"是落实科教兴国战略，配合"211工程"建设，吸引和培养杰出人才，加速高校中青年学科带头人队伍建设的一项重大举措。
+									</div>
+									<div  style="margin-left:20px; height:100px">
+									<h4>何梁何利基金科学与技术进步奖获得者</h4>
+										何梁何利基金科学与技术进步奖是目前国内规模最大的民间科技奖励基金，旨在奖励取得杰出成就的我国科技工作者。我校共有33名教授获此奖项。
+									</div>
+									<div  style="margin-left:20px; height:100px">
+									<h4>国家级教学名师奖获得者</h4>
+										为了推动教授上讲台，全面提高高等教育教学质量，教育部组织了国家级教学名师奖的评选和表彰工作。迄今，我校共有15名教师获得此奖项。
+									</div>
+									<div  style="margin-left:20px; height:100px">
+									<h4>国家杰出青年科学基金获得者</h4>
+										国家杰出青年科学基金资助国内和即将回国定居工作的优秀青年学者，在国内进行自然科学基础研究和应用基础研究。我校共有157名教授获此基金。
+									</div>
+									<div  style="margin-left:20px; height:100px">
+									<h4>国家“百千万人才工程”入选者</h4>
+										百千万人才工程是根据国家科技发展规划和经济社会发展需要制定的，旨在加强中国跨世纪优秀青年人才培养。我校共有47名教授入选。
+									</div>
+									<div  style="margin-left:20px; height:100px">
+									<h4>国家自然科学基金委创新研究群体</h4>
+										国家自然科学基金委创新研究群体科学基金旨在稳定地支持基础科学的前沿研究，培养和造就具有创新能力的人才和群体。我校共16个群体获此资助。
+									</div>
+									<div  style="margin-left:20px; height:100px">
+									<h4>清华大学“学术新人奖”获得者</h4>
+										清华大学"学术新人奖"设立于1994年，是全校青年教师的最高学术荣誉。自1995年正式实施以来，已评选16届，共有174位教师获得奖励。
+									</div>
+			                        <!-- <p>&nbsp;</p> -->
+			                        </td>
+               					 </tr>
+           					 </tbody></table>
+   		  					</div>
+							</p:else>
+								<div class="box-footer"></div>
+							</t:if>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <script type="text/javascript" >
+	 	jQuery(document).ready(function(){
+				jQuery("#${titleId}").parent().addClass("active");											 		
+	 	});
+	 </script>
+</html>

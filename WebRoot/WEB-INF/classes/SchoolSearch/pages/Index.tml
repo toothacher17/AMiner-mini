@@ -1,0 +1,54 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:fullwidth="false" t:title="校园搜索" t:meta_keywords=""
+	t:meta_description="" t:currentPage="Index" t:withSubheader="false">
+	
+	<div style="clear:both; height: 10px;" class="clear"></div>
+	<div class="container" id="container">
+		<div style="border:solid 0px red;float: left;width: 190px; margin:28px 0 30px 200px;">
+			<img style="max-height: 120px;" src="/res/img/logo2.jpg" alt="校园搜索"/>
+		</div>
+		<div class="clear"></div>
+		<div id="srch_menu" style="display:none;">
+			<div id="srch_menu_l"></div>
+			<ul style="width: 504px;" id="srch_menu_c">
+				<li class="cur"><a title="Expertise Search" href="/">
+				<em class="srch_menu_ls_l"></em><strong>Expert</strong><em class="srch_menu_ls_r"></em><span class="srch_cur"></span>
+				</a>
+				</li>
+				<li class=""><a title="Location Search" href="/geo">Location</a>
+				</li>
+				<li class=""><a shape="rect" title="Reviewer Recommendation" href="/reviewer-home">Reviewer</a>
+				</li>
+				<li class=""><a title="Conference Analysis" href="/conference/category">Conference</a>
+				</li>
+				<li class=""><a shape="rect" title="Ranks" href="/ranks/author">Rank</a>
+				</li>
+				<li class=""><a shape="rect" title="Graph Search" href="/association-home">Graph</a>
+				</li>
+				<li class=""><a shape="rect" title="Topic Browser" href="/topic-browser">Topic</a>
+				</li>
+			</ul>
+			<div id="srch_menu_r"></div>
+		</div>
+		
+		<t:form t:id="searchForm" t:autofocus="true" class="fn_search_form">
+			<div id="srch_con">
+				<div id="srch_con_l">
+					<t:textfield t:id="query" value="query" translate="string" autocomplete="off" class="srch_input fn_searchInput"></t:textfield>
+				
+					<t:suggestion.component suggestionType="suggestionType"></t:suggestion.component>
+
+				</div>
+				<div id="srch_con_r" >
+					<t:submit value="" style="width:94px;" class="btn_srch"></t:submit>
+				</div>
+			</div>
+			<div style="clear: both" ></div>
+		</t:form>
+		
+		<t:index.linkfield/>
+	</div>
+    
+    
+    
+</html>

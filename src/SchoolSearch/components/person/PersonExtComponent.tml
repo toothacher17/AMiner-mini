@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+		<div class="row">
+			<div class="span7">
+				<t:zone elementName="div" t:id="pextComponentZone">
+					<t:form zone="^">
+						<t:textfield value="personId" translate="integer" type="hidden"></t:textfield>
+						<t:textfield value="field" translate="string" type="hidden"></t:textfield>
+						<t:textfield value="title" translate="string" type="hidden"></t:textfield>
+						<div class="section-header">
+							<h2> ${title }
+								<t:if test="user">
+									<t:if test="isEdit">
+										<p:else>
+											<small class="pull-right auto-hide fade in" id="education_show_btn">
+												<t:actionlink t:id="doEdit" context="[personId, field, title]" 
+													class="btn btn-tiny btn-success btn-clear" zone="^">编辑</t:actionlink>
+											</small> 
+										</p:else>
+										<small class="pull-right" id="education_edit_btn">
+											<t:submit class="btn btn-tiny btn-success" value="保存" style="margin-right:4px;"></t:submit>
+											<t:actionlink t:id="doCancel" context="[personId, field, title]" 
+													class="btn btn-tiny btn-success btn-clear" zone="^">取消</t:actionlink>
+										</small>
+									</t:if>
+								</t:if>
+							</h2>
+						</div>
+						<t:if test="isEdit">
+							<p:else>
+								<t:if test="personext">
+									<div class="section" id="education_show_div" >
+										<p class="indent fn_text">
+											<t:loop source="displayStrings" value="displayString">
+												${displayString }<br/>
+											</t:loop>
+										</p>
+									</div>
+								</t:if>
+							</p:else>
+							<div class="section" id="education_edit_div">
+								<t:if test="personext">
+									<t:textarea value="realString" translate="string" style="width:98%;height:96px" class="fn_text"></t:textarea>
+									<p:else>
+										<t:textarea value="realString" translate="string" style="width:98%;height:96px" class="fn_text"></t:textarea>
+									</p:else>
+								</t:if>
+							</div>
+						</t:if>
+					</t:form>
+				</t:zone>
+			</div>
+		</div>
+</t:container>

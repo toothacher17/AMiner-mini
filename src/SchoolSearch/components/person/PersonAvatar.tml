@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+		
+	<t:zone elementName="div" t:id="avatarZone">
+			<t:if test="errorMessage">
+				<div class="t-error" style="margin-top:-10px;margin-bottom:10px;">
+					<div class="t-banner">错误</div>
+					<ul> <li>${errorMessage }</li> </ul>
+				</div>
+			</t:if>
+			<t:if test="isEditAvatar">
+				<div class="row-fluid thumbnail author-photo-edit">
+					<div class="container-fluid no-margin">
+						<t:form t:id="uploadAvatarForm">
+							<t:textfield value="personId" translate="integer" type="hidden"></t:textfield>
+							<div class="box box-mini">
+								<div class="box-header">
+									<div class="pull-right"></div>
+									<h5 class="small-margin">Edit Avatar</h5>
+								</div>
+								<div class="box-body">
+									<div class="row line">
+										<div id="uploadcover" style="position:absolute;background:#FFFFFF;opacity:0.4;width:210px;height:210px;z-index:10001;overflow:auto;display:none"> </div>
+										<label>上传头像: </label>
+										<input t:type="upload" t:id="file" t:value="file" class="btn btn-mini btn-primary"/>
+										<hr class="narrow" />
+										<label>外链头像</label>
+										<br />
+										<t:textfield value="imageLink" translate="string" style="width:76%" placeholder="输入图片网址"></t:textfield>
+										<hr class="narrow" />
+										<div class="row-fluid" xml:space="preserve" style="margin: 12px 10px 5px;width:95%;text-align:right;">
+											<t:submit class="btn btn-small btn-success"></t:submit>
+											<t:actionlink zone="^" t:id="cancel" context="personId" class="btn btn-small btn-clear">取消</t:actionlink>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+						</t:form>
+					</div>
+				</div>
+				<p:else>
+					<div style="min-height:160px;width:150px" class="row-fluid thumbnail">
+						<img width="150px" alt="${name }" src="${avatar }"/>
+					</div>
+					<t:if test="user">
+						<div class="row-fluid" style="text-align: center;">
+							<t:actionlink zone="avatarZone" t:id="uploadAvatar" context="personId" class="btn btn-tiny btn-success btn-clear pull-right">上传头像</t:actionlink>
+						</div>
+					</t:if>
+				</p:else>
+			</t:if>
+	</t:zone>
+		
+</t:container>

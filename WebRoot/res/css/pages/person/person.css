@@ -1,0 +1,18 @@
+	line.network_line {stroke-width: 2px;}
+	
+	line.tutor {stroke: #e41a1c;}
+	line.student {stroke: #ff7f00;}
+	line.colleague {stroke: #4daf4a;}
+	
+	line.tutor.hover {stroke: #FBB4AE;}
+	line.student.hover {stroke: #FED9A6;}
+	line.colleague.hover {stroke: #CCEBC5;}
+	
+	g.self {fill: #377eb8;}
+	g.tutor {fill: #e41a1c;}
+	g.student {fill: #ff7f00;}
+	g.colleague {fill: #4daf4a;}
+	
+	g.tutor.hover {fill: #FBB4AE;}
+	g.student.hover {fill: #FED9A6;}
+	g.colleague.hover {fill: #CCEBC5;}

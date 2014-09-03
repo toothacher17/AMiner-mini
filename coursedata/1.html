@@ -1,0 +1,1181 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/css/style1.css" rel="stylesheet" type="text/css">
+<table width="800" border="0" cellspacing="0" cellpadding="0" align="center" height="88" background="images/banner_kc.gif">
+        <tr> 
+          <td>&nbsp; </td>
+        </tr>
+      </table>
+<table width="800" border="0" cellspacing="0" cellpadding="0" align="center" height="25" background="images/l_bg.gif">
+        <tr> 
+          <td width="50">&nbsp;</td>
+          <td> 
+            <table width="400" border="0" cellspacing="0" cellpadding="0" height="25">
+              <tr> 
+                <td align="center">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td width="10" align="right" valign="top"><img src="images/l_r.gif" width="10" height="18"></td>
+        </tr>
+      </table>
+<table width="800" BORDER=0 CELLSPACING=2 CELLPADDING=0 align="center">
+    <form name="searchform" method="post">
+    <tr>
+      <td colspan="4" align="center" bgcolor="#f7f7f7"> 
+         <font size="2"> 
+            含有课程名字:<input type="text" name="key_coursename" size="20" maxlength="20" value="">
+            教师姓名:<input type="text" name="key_teachername" size="20" maxlength="20" value=""></font>
+      </td>
+    </tr>
+    <tr>
+        <td colspan="4" align="center" bgcolor="#f7f7f7"> 
+          <font size="2">在<select name="semesterid" size="1">
+ 
+             <option value="100020">2001春</option>
+ 
+             <option value="100080">2001秋</option>
+ 
+             <option value="100120">2002春</option>
+ 
+             <option value="100140">2002秋</option>
+ 
+             <option value="100160">2003春</option>
+ 
+             <option value="100180">2003秋</option>
+ 
+             <option value="100200">2004春</option>
+ 
+             <option value="100220">2004夏</option>
+ 
+             <option value="100240">2004秋</option>
+ 
+             <option value="100260">2004-2005春</option>
+ 
+             <option value="100280">2004-2005小学期</option>
+ 
+             <option value="100300">2005-2006秋</option>
+ 
+             <option value="100320">2005-2006春</option>
+ 
+             <option value="100341">2005-2006小学期</option>
+ 
+             <option value="100342">2006-2007秋</option>
+ 
+             <option value="100380">2006-2007春</option>
+ 
+             <option value="100400">2006-2007小学期</option>
+ 
+             <option value="100420">2007-2008秋季学期</option>
+ 
+             <option value="100440">2007-2008春季学期</option>
+ 
+             <option value="100460">2007-2008小学期</option>
+ 
+             <option value="100480">2008-2009秋季学期</option>
+ 
+             <option value="100500">2008-2009春季学期</option>
+ 
+             <option value="100520">2008-2009夏季学期</option>
+ 
+             <option value="100521">2009-2010秋季学期</option>
+ 
+             <option value="100540">2009-2010春季学期</option>
+ 
+             <option value="100560">2009-2010夏季学期</option>
+ 
+             <option value="100561">2010-2011秋季学期</option>
+ 
+             <option value="100580">2010-2011春季学期</option>
+ 
+             <option value="100600">2010-2011夏季学期</option>
+ 
+             <option value="100601">2011-2012秋季学期</option>
+ 
+             <option value="100620">2011-2012春季学期</option>
+ 
+             <option value="100640">2011-2012夏季学期</option>
+ 
+             <option value="100641">2012-2013秋季学期</option>
+ 
+             <option value="100660" selected >2012-2013春季学期</option>
+ 
+             <option value="100680">2012-2013夏季学期</option>
+ 
+             <option value="100681">2013-2014秋季学期</option>
+ 
+          </select>
+          <select name="student" size="1">
+          	<option value="0"  >本科生课程</option>
+          	<option value="1"  >研究生课程</option>
+          	<option value="2" selected
+ >全部课程</option>
+          </select>
+          <select name=depart_id>
+
+	        <option value="000" >建筑学院
+	
+	        <option value="0002" >进修1
+	
+	        <option value="001" >城规系
+	
+	        <option value="002" >建筑系
+	
+	        <option value="003" >土木系
+	
+	        <option value="004" >水利系
+	
+	        <option value="005" >环境学院
+	
+	        <option value="012" >机械系
+	
+	        <option value="013" >精仪系
+	
+	        <option value="014" >热能系
+	
+	        <option value="015" >汽车系
+	
+	        <option value="016" >工业工程
+	
+	        <option value="021" >信息学院
+	
+	        <option value="022" >电机系
+	
+	        <option value="023" >电子系
+	
+	        <option value="024" >计算机系
+	
+	        <option value="025" >自动化系
+	
+	        <option value="026" >微纳电子系
+	
+	        <option value="031" >航院
+	
+	        <option value="032" >工物系
+	
+	        <option value="033" >力学系
+	
+	        <option value="034" >化工系
+	
+	        <option value="035" >材料学院
+	
+	        <option value="041" >理学院
+	
+	        <option value="042" >数学系
+	
+	        <option value="043" >物理系
+	
+	        <option value="044" >化学系
+	
+	        <option value="045" >生命学院
+	
+	        <option value="046" >地球科学中心
+	
+	        <option value="047" >交叉信息院
+	
+	        <option value="048" >高研院
+	
+	        <option value="049" >周培源应
+	
+	        <option value="051" >经管学院
+	
+	        <option value="059" >公共管理
+	
+	        <option value="060" >金融学院
+	
+	        <option value="061" >人文社科学院
+	
+	        <option value="063" >中文系
+	
+	        <option value="064" >外文系
+	
+	        <option value="066" >法学院
+	
+	        <option value="067" >新闻学院
+	
+	        <option value="068" >马克思主义学院
+	
+	        <option value="069" >人文学院
+	
+	        <option value="070" >社科学院
+	
+	        <option value="072" >体育部
+	
+	        <option value="073" >电教中心
+	
+	        <option value="074" >计算中心
+	
+	        <option value="075" >图书馆
+	
+	        <option value="078" >艺教中心
+	
+	        <option value="080" >美术学院
+	
+	        <option value="090" >土水学院
+	
+	        <option value="091" >建管系
+	
+	        <option value="099" >建筑技术
+	
+	        <option value="101" >核研院
+	
+	        <option value="102" >微电子所
+	
+	        <option value="103" >教研院
+	
+	        <option value="104" >文研所
+	
+	        <option value="112" >网络中心
+	
+	        <option value="114" >宇航中心
+	
+	        <option value="151" >训练中心
+	
+	        <option value="155" >电工电子中心
+	
+	        <option value="205" >宣传部
+	
+	        <option value="207" >学生部
+	
+	        <option value="208" >保卫部
+	
+	        <option value="209" >武装部
+	
+	        <option value="252" >党办校办
+	
+	        <option value="255" >研究生院
+	
+	        <option value="265" >生产处
+	
+	        <option value="291" >深研生院
+	
+	        <option value="305" >校医院
+	
+	        <option value="353" >紫光集团
+	
+	        <option value="357" >科技园
+	
+	        <option value="400" >医学院
+	
+	        <option value="403" >生医系
+	
+	        <option value="410" >软件学院
+	              
+	        <option value="999" selected >所有系
+	
+       </select>的课程中
+          <input type="submit" name="submitaction" value="查询">
+      </td>
+    </tr>
+   </form>
+</table>
+
+<script language=javascript>
+<!--
+	OrderSeq = new Array();
+	OrderId = new Array();
+ 	CourseId = new Array();
+ 	CourseName = new Array();
+ 	CourseNo = new Array();
+ 	TeacherId = new Array();
+ 	TeacherName = new Array();
+ 	MajorId = new Array();
+ 	MajorName = new Array();
+ 	BrowseTimes = new Array();
+ 	SemesterId = new Array();
+ 	SemesterName = new Array();
+	CourseWare = new Array();
+	CourseAnswer = new Array();
+	CourseHomewk = new Array(); 	
+	OpenType = new Array();
+	StudentNum = new Array();
+	tempBrowseTimes = 0;
+	tempCourseWare = 0;
+	tempCourseAnswer = 0;
+	tempCourseHomewk = 0;
+	
+//-->
+</script>
+
+<script language=javascript>
+ 	CourseId[0] = '99438';
+ 	CourseName[0] = '广告概论';
+ 	CourseNo[0] = '40670533';
+ 	TeacherId[0] = '2004990078';
+ 	TeacherName[0] = '赵曙光';
+ 	MajorId[0] = '067';
+ 	MajorName[0] = '新闻学院';
+ 	BrowseTimes[0] = 2709;
+ 	SemesterId[0] = '100660';
+ 	SemesterName[0] = '2012-2013春季学期';
+	OpenType[0] = '本班'; 	
+	StudentNum[0] = '41';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[1] = '99356';
+ 	CourseName[1] = '美国社会与文化';
+ 	CourseNo[1] = '40640022';
+ 	TeacherId[1] = 'L064364';
+ 	TeacherName[1] = 'Jonathan Levine';
+ 	MajorId[1] = '064';
+ 	MajorName[1] = '外文系';
+ 	BrowseTimes[1] = 2694;
+ 	SemesterId[1] = '100660';
+ 	SemesterName[1] = '2012-2013春季学期';
+	OpenType[1] = '本班'; 	
+	StudentNum[1] = '76';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[2] = '99043';
+ 	CourseName[2] = '信息系统安全';
+ 	CourseNo[2] = '34100182';
+ 	TeacherId[2] = '2008990075';
+ 	TeacherName[2] = '万志国';
+ 	MajorId[2] = '410';
+ 	MajorName[2] = '软件学院';
+ 	BrowseTimes[2] = 2688;
+ 	SemesterId[2] = '100660';
+ 	SemesterName[2] = '2012-2013春季学期';
+	OpenType[2] = '本班'; 	
+	StudentNum[2] = '50';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[3] = '98914';
+ 	CourseName[3] = '社会科学统计学入门';
+ 	CourseNo[3] = '30700383';
+ 	TeacherId[3] = '2009990116';
+ 	TeacherName[3] = '张传杰';
+ 	MajorId[3] = '070';
+ 	MajorName[3] = '社科学院';
+ 	BrowseTimes[3] = 2685;
+ 	SemesterId[3] = '100660';
+ 	SemesterName[3] = '2012-2013春季学期';
+	OpenType[3] = '本班'; 	
+	StudentNum[3] = '26';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[4] = '100343';
+ 	CourseName[4] = '嵌入式系统的软硬件设计';
+ 	CourseNo[4] = '80250503';
+ 	TeacherId[4] = '2000990078';
+ 	TeacherName[4] = '陈峰';
+ 	MajorId[4] = '025';
+ 	MajorName[4] = '自动化系';
+ 	BrowseTimes[4] = 2685;
+ 	SemesterId[4] = '100660';
+ 	SemesterName[4] = '2012-2013春季学期';
+	OpenType[4] = '本班'; 	
+	StudentNum[4] = '31';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[5] = '97767';
+ 	CourseName[5] = '大学生职业生涯规划与发展';
+ 	CourseNo[5] = '02070251';
+ 	TeacherId[5] = '2009980051';
+ 	TeacherName[5] = '金蕾莅';
+ 	MajorId[5] = '207';
+ 	MajorName[5] = '学生部';
+ 	BrowseTimes[5] = 2684;
+ 	SemesterId[5] = '100660';
+ 	SemesterName[5] = '2012-2013春季学期';
+	OpenType[5] = '本班'; 	
+	StudentNum[5] = '120';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[6] = '97431';
+ 	CourseName[6] = '英语高级阅读';
+ 	CourseNo[6] = '00640202';
+ 	TeacherId[6] = '1997990065';
+ 	TeacherName[6] = '李华山';
+ 	MajorId[6] = '064';
+ 	MajorName[6] = '外文系';
+ 	BrowseTimes[6] = 2681;
+ 	SemesterId[6] = '100660';
+ 	SemesterName[6] = '2012-2013春季学期';
+	OpenType[6] = '本班'; 	
+	StudentNum[6] = '76';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[7] = '98564';
+ 	CourseName[7] = '环境监测';
+ 	CourseNo[7] = '30050213';
+ 	TeacherId[7] = '1992990199';
+ 	TeacherName[7] = '余刚';
+ 	MajorId[7] = '005';
+ 	MajorName[7] = '环境学院';
+ 	BrowseTimes[7] = 2677;
+ 	SemesterId[7] = '100660';
+ 	SemesterName[7] = '2012-2013春季学期';
+	OpenType[7] = '本班'; 	
+	StudentNum[7] = '79';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[8] = '97437';
+ 	CourseName[8] = '英汉互译实践与技巧';
+ 	CourseNo[8] = '00640242';
+ 	TeacherId[8] = '1996990125';
+ 	TeacherName[8] = '许建平';
+ 	MajorId[8] = '064';
+ 	MajorName[8] = '外文系';
+ 	BrowseTimes[8] = 2673;
+ 	SemesterId[8] = '100660';
+ 	SemesterName[8] = '2012-2013春季学期';
+	OpenType[8] = '本班'; 	
+	StudentNum[8] = '38';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[9] = '98396';
+ 	CourseName[9] = '混凝土结构(2)';
+ 	CourseNo[9] = '20030162';
+ 	TeacherId[9] = '1994990083';
+ 	TeacherName[9] = '叶列平';
+ 	MajorId[9] = '003';
+ 	MajorName[9] = '土木系';
+ 	BrowseTimes[9] = 2671;
+ 	SemesterId[9] = '100660';
+ 	SemesterName[9] = '2012-2013春季学期';
+	OpenType[9] = '本班'; 	
+	StudentNum[9] = '97';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[10] = '99202';
+ 	CourseName[10] = '存储技术基础';
+ 	CourseNo[10] = '40240692';
+ 	TeacherId[10] = '2002990093';
+ 	TeacherName[10] = '张悠慧';
+ 	MajorId[10] = '024';
+ 	MajorName[10] = '计算机系';
+ 	BrowseTimes[10] = 2671;
+ 	SemesterId[10] = '100660';
+ 	SemesterName[10] = '2012-2013春季学期';
+	OpenType[10] = '本班'; 	
+	StudentNum[10] = '47';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[11] = '98688';
+ 	CourseName[11] = '材料科学基础(2)';
+ 	CourseNo[11] = '30350074';
+ 	TeacherId[11] = '1997990260';
+ 	TeacherName[11] = '张文征';
+ 	MajorId[11] = '035';
+ 	MajorName[11] = '材料学院';
+ 	BrowseTimes[11] = 2668;
+ 	SemesterId[11] = '100660';
+ 	SemesterName[11] = '2012-2013春季学期';
+	OpenType[11] = '本班'; 	
+	StudentNum[11] = '85';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[12] = '97465';
+ 	CourseName[12] = '影视欣赏';
+ 	CourseNo[12] = '00640312';
+ 	TeacherId[12] = 'L064557';
+ 	TeacherName[12] = 'Nicholas Skidmore';
+ 	MajorId[12] = '064';
+ 	MajorName[12] = '外文系';
+ 	BrowseTimes[12] = 2661;
+ 	SemesterId[12] = '100660';
+ 	SemesterName[12] = '2012-2013春季学期';
+	OpenType[12] = '本班'; 	
+	StudentNum[12] = '26';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[13] = '99931';
+ 	CourseName[13] = '知识工程';
+ 	CourseNo[13] = '70240103';
+ 	TeacherId[13] = '2001990257';
+ 	TeacherName[13] = '李涓子';
+ 	MajorId[13] = '024';
+ 	MajorName[13] = '计算机系';
+ 	BrowseTimes[13] = 2660;
+ 	SemesterId[13] = '100660';
+ 	SemesterName[13] = '2012-2013春季学期';
+	OpenType[13] = '本班'; 	
+	StudentNum[13] = '37';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[14] = '98440';
+ 	CourseName[14] = '电路原理实验';
+ 	CourseNo[14] = '20220221';
+ 	TeacherId[14] = '1991990341';
+ 	TeacherName[14] = '徐云';
+ 	MajorId[14] = '022';
+ 	MajorName[14] = '电机系';
+ 	BrowseTimes[14] = 2657;
+ 	SemesterId[14] = '100660';
+ 	SemesterName[14] = '2012-2013春季学期';
+	OpenType[14] = '本班'; 	
+	StudentNum[14] = '199';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[15] = '98473';
+ 	CourseName[15] = '电动力学';
+ 	CourseNo[15] = '20430054';
+ 	TeacherId[15] = '2003990117';
+ 	TeacherName[15] = '张斌';
+ 	MajorId[15] = '043';
+ 	MajorName[15] = '物理系';
+ 	BrowseTimes[15] = 2645;
+ 	SemesterId[15] = '100660';
+ 	SemesterName[15] = '2012-2013春季学期';
+	OpenType[15] = '本班'; 	
+	StudentNum[15] = '92';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[16] = '98701';
+ 	CourseName[16] = '高分子化学导论';
+ 	CourseNo[16] = '30440104';
+ 	TeacherId[16] = '2002990072';
+ 	TeacherName[16] = '袁金颖';
+ 	MajorId[16] = '044';
+ 	MajorName[16] = '化学系';
+ 	BrowseTimes[16] = 2641;
+ 	SemesterId[16] = '100660';
+ 	SemesterName[16] = '2012-2013春季学期';
+	OpenType[16] = '本班'; 	
+	StudentNum[16] = '52';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[17] = '100577';
+ 	CourseName[17] = '领导力';
+ 	CourseNo[17] = '80590922';
+ 	TeacherId[17] = '1998990045';
+ 	TeacherName[17] = '于永达';
+ 	MajorId[17] = '059';
+ 	MajorName[17] = '公共管理';
+ 	BrowseTimes[17] = 2638;
+ 	SemesterId[17] = '100660';
+ 	SemesterName[17] = '2012-2013春季学期';
+	OpenType[17] = '本班'; 	
+	StudentNum[17] = '96';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[18] = '98594';
+ 	CourseName[18] = '运筹学(3)(决策方法学)';
+ 	CourseNo[18] = '30160062';
+ 	TeacherId[18] = '2006990009';
+ 	TeacherName[18] = '赵磊';
+ 	MajorId[18] = '016';
+ 	MajorName[18] = '工业工程';
+ 	BrowseTimes[18] = 2636;
+ 	SemesterId[18] = '100660';
+ 	SemesterName[18] = '2012-2013春季学期';
+	OpenType[18] = '本班'; 	
+	StudentNum[18] = '36';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[19] = '98539';
+ 	CourseName[19] = 'CAAD方法';
+ 	CourseNo[19] = '30020751';
+ 	TeacherId[19] = '2010990044';
+ 	TeacherName[19] = '黄蔚欣';
+ 	MajorId[19] = '002';
+ 	MajorName[19] = '建筑系';
+ 	BrowseTimes[19] = 2634;
+ 	SemesterId[19] = '100660';
+ 	SemesterName[19] = '2012-2013春季学期';
+	OpenType[19] = '本班'; 	
+	StudentNum[19] = '115';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[20] = '99012';
+ 	CourseName[20] = '建筑施工组织';
+ 	CourseNo[20] = '30910042';
+ 	TeacherId[20] = 'L00302';
+ 	TeacherName[20] = '李玉龙';
+ 	MajorId[20] = '091';
+ 	MajorName[20] = '建管系';
+ 	BrowseTimes[20] = 2623;
+ 	SemesterId[20] = '100660';
+ 	SemesterName[20] = '2012-2013春季学期';
+	OpenType[20] = '本班'; 	
+	StudentNum[20] = '123';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[21] = '99269';
+ 	CourseName[21] = '结构陶瓷材料及其应用';
+ 	CourseNo[21] = '40350372';
+ 	TeacherId[21] = '1996990132';
+ 	TeacherName[21] = '杨金龙';
+ 	MajorId[21] = '035';
+ 	MajorName[21] = '材料学院';
+ 	BrowseTimes[21] = 2620;
+ 	SemesterId[21] = '100660';
+ 	SemesterName[21] = '2012-2013春季学期';
+	OpenType[21] = '本班'; 	
+	StudentNum[21] = '66';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[22] = '98862';
+ 	CourseName[22] = '英语精读(2)';
+ 	CourseNo[22] = '30641524';
+ 	TeacherId[22] = '1996990139';
+ 	TeacherName[22] = '吴霞';
+ 	MajorId[22] = '064';
+ 	MajorName[22] = '外文系';
+ 	BrowseTimes[22] = 2611;
+ 	SemesterId[22] = '100660';
+ 	SemesterName[22] = '2012-2013春季学期';
+	OpenType[22] = '本班'; 	
+	StudentNum[22] = '28';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[23] = '97898';
+ 	CourseName[23] = '中国近现代史纲要';
+ 	CourseNo[23] = '10610193';
+ 	TeacherId[23] = '2011990106';
+ 	TeacherName[23] = '李蕉';
+ 	MajorId[23] = '068';
+ 	MajorName[23] = '马克思主义学院';
+ 	BrowseTimes[23] = 2610;
+ 	SemesterId[23] = '100660';
+ 	SemesterName[23] = '2012-2013春季学期';
+	OpenType[23] = '本班'; 	
+	StudentNum[23] = '103';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[24] = '99179';
+ 	CourseName[24] = '现代分析技术';
+ 	CourseNo[24] = '40230292';
+ 	TeacherId[24] = '2005990103';
+ 	TeacherName[24] = '王健';
+ 	MajorId[24] = '023';
+ 	MajorName[24] = '电子系';
+ 	BrowseTimes[24] = 2600;
+ 	SemesterId[24] = '100660';
+ 	SemesterName[24] = '2012-2013春季学期';
+	OpenType[24] = '本班'; 	
+	StudentNum[24] = '74';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[25] = '99013';
+ 	CourseName[25] = '工程项目管理(1)';
+ 	CourseNo[25] = '30910052';
+ 	TeacherId[25] = '1987990009';
+ 	TeacherName[25] = '强茂山';
+ 	MajorId[25] = '091';
+ 	MajorName[25] = '建管系';
+ 	BrowseTimes[25] = 2598;
+ 	SemesterId[25] = '100660';
+ 	SemesterName[25] = '2012-2013春季学期';
+	OpenType[25] = '本班'; 	
+	StudentNum[25] = '89';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[26] = '99079';
+ 	CourseName[26] = '钢结构课程设计';
+ 	CourseNo[26] = '40030682';
+ 	TeacherId[26] = '2005990019';
+ 	TeacherName[26] = '施刚';
+ 	MajorId[26] = '003';
+ 	MajorName[26] = '土木系';
+ 	BrowseTimes[26] = 2592;
+ 	SemesterId[26] = '100660';
+ 	SemesterName[26] = '2012-2013春季学期';
+	OpenType[26] = '本班'; 	
+	StudentNum[26] = '66';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[27] = '99175';
+ 	CourseName[27] = '太阳能光伏发电及其应用';
+ 	CourseNo[27] = '40220912';
+ 	TeacherId[27] = '2006990118';
+ 	TeacherName[27] = '袁立强';
+ 	MajorId[27] = '022';
+ 	MajorName[27] = '电机系';
+ 	BrowseTimes[27] = 2590;
+ 	SemesterId[27] = '100660';
+ 	SemesterName[27] = '2012-2013春季学期';
+	OpenType[27] = '本班'; 	
+	StudentNum[27] = '41';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[28] = '99698';
+ 	CourseName[28] = '群论';
+ 	CourseNo[28] = '60430024';
+ 	TeacherId[28] = '1997990218';
+ 	TeacherName[28] = '阮东';
+ 	MajorId[28] = '043';
+ 	MajorName[28] = '物理系';
+ 	BrowseTimes[28] = 2585;
+ 	SemesterId[28] = '100660';
+ 	SemesterName[28] = '2012-2013春季学期';
+	OpenType[28] = '本班'; 	
+	StudentNum[28] = '54';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[29] = '97740';
+ 	CourseName[29] = '媒介素养综合知识与实践';
+ 	CourseNo[29] = '02050032';
+ 	TeacherId[29] = '2000990029';
+ 	TeacherName[29] = '覃川';
+ 	MajorId[29] = '205';
+ 	MajorName[29] = '宣传部';
+ 	BrowseTimes[29] = 2584;
+ 	SemesterId[29] = '100660';
+ 	SemesterName[29] = '2012-2013春季学期';
+	OpenType[29] = '本班'; 	
+	StudentNum[29] = '86';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[30] = '97865';
+ 	CourseName[30] = '物理实验A(1)';
+ 	CourseNo[30] = '10430782';
+ 	TeacherId[30] = '1994990198';
+ 	TeacherName[30] = '晋青珍';
+ 	MajorId[30] = '043';
+ 	MajorName[30] = '物理系';
+ 	BrowseTimes[30] = 2575;
+ 	SemesterId[30] = '100660';
+ 	SemesterName[30] = '2012-2013春季学期';
+	OpenType[30] = '本班'; 	
+	StudentNum[30] = '156';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[31] = '98655';
+ 	CourseName[31] = '数据结构';
+ 	CourseNo[31] = '30250203';
+ 	TeacherId[31] = '1995990099';
+ 	TeacherName[31] = '李宛洲';
+ 	MajorId[31] = '025';
+ 	MajorName[31] = '自动化系';
+ 	BrowseTimes[31] = 2574;
+ 	SemesterId[31] = '100660';
+ 	SemesterName[31] = '2012-2013春季学期';
+	OpenType[31] = '本班'; 	
+	StudentNum[31] = '29';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[32] = '100772';
+ 	CourseName[32] = '微处理器结构及设计';
+ 	CourseNo[32] = '81020022';
+ 	TeacherId[32] = '2002990009';
+ 	TeacherName[32] = '李树国';
+ 	MajorId[32] = '026';
+ 	MajorName[32] = '微纳电子系';
+ 	BrowseTimes[32] = 2573;
+ 	SemesterId[32] = '100660';
+ 	SemesterName[32] = '2012-2013春季学期';
+	OpenType[32] = '本班'; 	
+	StudentNum[32] = '40';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[33] = '97769';
+ 	CourseName[33] = '大学生职业生涯规划与发展';
+ 	CourseNo[33] = '02070251';
+ 	TeacherId[33] = 'L20705';
+ 	TeacherName[33] = '古典';
+ 	MajorId[33] = '207';
+ 	MajorName[33] = '学生部';
+ 	BrowseTimes[33] = 2542;
+ 	SemesterId[33] = '100660';
+ 	SemesterName[33] = '2012-2013春季学期';
+	OpenType[33] = '本班'; 	
+	StudentNum[33] = '122';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[34] = '99173';
+ 	CourseName[34] = '智能电网概论';
+ 	CourseNo[34] = '40220882';
+ 	TeacherId[34] = '1999990305';
+ 	TeacherName[34] = '何光宇';
+ 	MajorId[34] = '022';
+ 	MajorName[34] = '电机系';
+ 	BrowseTimes[34] = 2538;
+ 	SemesterId[34] = '100660';
+ 	SemesterName[34] = '2012-2013春季学期';
+	OpenType[34] = '本班'; 	
+	StudentNum[34] = '52';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[35] = '98556';
+ 	CourseName[35] = '水力学(1)';
+ 	CourseNo[35] = '30040323';
+ 	TeacherId[35] = '2001990006';
+ 	TeacherName[35] = '余锡平';
+ 	MajorId[35] = '004';
+ 	MajorName[35] = '水利系';
+ 	BrowseTimes[35] = 2538;
+ 	SemesterId[35] = '100660';
+ 	SemesterName[35] = '2012-2013春季学期';
+	OpenType[35] = '本班'; 	
+	StudentNum[35] = '90';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[36] = '97400';
+ 	CourseName[36] = '生态学';
+ 	CourseNo[36] = '00450012';
+ 	TeacherId[36] = '1994990128';
+ 	TeacherName[36] = '黄大明';
+ 	MajorId[36] = '045';
+ 	MajorName[36] = '生命学院';
+ 	BrowseTimes[36] = 2526;
+ 	SemesterId[36] = '100660';
+ 	SemesterName[36] = '2012-2013春季学期';
+	OpenType[36] = '本班'; 	
+	StudentNum[36] = '110';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[37] = '97401';
+ 	CourseName[37] = '生态学';
+ 	CourseNo[37] = '00450012';
+ 	TeacherId[37] = '1994990128';
+ 	TeacherName[37] = '黄大明';
+ 	MajorId[37] = '045';
+ 	MajorName[37] = '生命学院';
+ 	BrowseTimes[37] = 2506;
+ 	SemesterId[37] = '100660';
+ 	SemesterName[37] = '2012-2013春季学期';
+	OpenType[37] = '本班'; 	
+	StudentNum[37] = '102';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[38] = '98039';
+ 	CourseName[38] = '学术英语读写（1）－说明文';
+ 	CourseNo[38] = '10641062';
+ 	TeacherId[38] = '2001990054';
+ 	TeacherName[38] = '杨朝春';
+ 	MajorId[38] = '064';
+ 	MajorName[38] = '外文系';
+ 	BrowseTimes[38] = 2505;
+ 	SemesterId[38] = '100660';
+ 	SemesterName[38] = '2012-2013春季学期';
+	OpenType[38] = '本班'; 	
+	StudentNum[38] = '30';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[39] = '97541';
+ 	CourseName[39] = '西方文学思潮与作品';
+ 	CourseNo[39] = '00690552';
+ 	TeacherId[39] = '1995990121';
+ 	TeacherName[39] = '张玲霞';
+ 	MajorId[39] = '069';
+ 	MajorName[39] = '人文学院';
+ 	BrowseTimes[39] = 2500;
+ 	SemesterId[39] = '100660';
+ 	SemesterName[39] = '2012-2013春季学期';
+	OpenType[39] = '本班'; 	
+	StudentNum[39] = '182';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[40] = '99034';
+ 	CourseName[40] = '现代生物学原理(1)';
+ 	CourseNo[40] = '34000183';
+ 	TeacherId[40] = '2010960001';
+ 	TeacherName[40] = '李海涛';
+ 	MajorId[40] = '400';
+ 	MajorName[40] = '医学院';
+ 	BrowseTimes[40] = 2495;
+ 	SemesterId[40] = '100660';
+ 	SemesterName[40] = '2012-2013春季学期';
+	OpenType[40] = '本班'; 	
+	StudentNum[40] = '32';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[41] = '98569';
+ 	CourseName[41] = '检测技术基础';
+ 	CourseNo[41] = '30120213';
+ 	TeacherId[41] = '1997990044';
+ 	TeacherName[41] = '韩赞东';
+ 	MajorId[41] = '012';
+ 	MajorName[41] = '机械系';
+ 	BrowseTimes[41] = 2488;
+ 	SemesterId[41] = '100660';
+ 	SemesterName[41] = '2012-2013春季学期';
+	OpenType[41] = '本班'; 	
+	StudentNum[41] = '39';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[42] = '99281';
+ 	CourseName[42] = '概率论(1)';
+ 	CourseNo[42] = '40420583';
+ 	TeacherId[42] = 'S87026';
+ 	TeacherName[42] = '龚光鲁';
+ 	MajorId[42] = '042';
+ 	MajorName[42] = '数学系';
+ 	BrowseTimes[42] = 2465;
+ 	SemesterId[42] = '100660';
+ 	SemesterName[42] = '2012-2013春季学期';
+	OpenType[42] = '本班'; 	
+	StudentNum[42] = '62';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[43] = '99354';
+ 	CourseName[43] = '汉语研究专题';
+ 	CourseNo[43] = '40631422';
+ 	TeacherId[43] = '1988990016';
+ 	TeacherName[43] = '赵丽明';
+ 	MajorId[43] = '063';
+ 	MajorName[43] = '中文系';
+ 	BrowseTimes[43] = 2464;
+ 	SemesterId[43] = '100660';
+ 	SemesterName[43] = '2012-2013春季学期';
+	OpenType[43] = '本班'; 	
+	StudentNum[43] = '47';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[44] = '99283';
+ 	CourseName[44] = '偏微分方程';
+ 	CourseNo[44] = '40420664';
+ 	TeacherId[44] = '2011990121';
+ 	TeacherName[44] = '罗涛';
+ 	MajorId[44] = '042';
+ 	MajorName[44] = '数学系';
+ 	BrowseTimes[44] = 2461;
+ 	SemesterId[44] = '100660';
+ 	SemesterName[44] = '2012-2013春季学期';
+	OpenType[44] = '本班'; 	
+	StudentNum[44] = '29';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[45] = '99969';
+ 	CourseName[45] = '高等计算流体力学';
+ 	CourseNo[45] = '70330064';
+ 	TeacherId[45] = '1992990332';
+ 	TeacherName[45] = '任玉新';
+ 	MajorId[45] = '031';
+ 	MajorName[45] = '航院';
+ 	BrowseTimes[45] = 2459;
+ 	SemesterId[45] = '100660';
+ 	SemesterName[45] = '2012-2013春季学期';
+	OpenType[45] = '本班'; 	
+	StudentNum[45] = '27';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[46] = '99309';
+ 	CourseName[46] = '分子生物学基础';
+ 	CourseNo[46] = '40450382';
+ 	TeacherId[46] = '2012990027';
+ 	TeacherName[46] = '杨扬';
+ 	MajorId[46] = '045';
+ 	MajorName[46] = '生命学院';
+ 	BrowseTimes[46] = 2455;
+ 	SemesterId[46] = '100660';
+ 	SemesterName[46] = '2012-2013春季学期';
+	OpenType[46] = '本班'; 	
+	StudentNum[46] = '52';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[47] = '97566';
+ 	CourseName[47] = '电影与政治';
+ 	CourseNo[47] = '00700932';
+ 	TeacherId[47] = '2010990085';
+ 	TeacherName[47] = '于晓虹';
+ 	MajorId[47] = '070';
+ 	MajorName[47] = '社科学院';
+ 	BrowseTimes[47] = 2452;
+ 	SemesterId[47] = '100660';
+ 	SemesterName[47] = '2012-2013春季学期';
+	OpenType[47] = '本班'; 	
+	StudentNum[47] = '101';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[48] = '97837';
+ 	CourseName[48] = '物理学导论';
+ 	CourseNo[48] = '10430205';
+ 	TeacherId[48] = '1962990119';
+ 	TeacherName[48] = '邓新元';
+ 	MajorId[48] = '043';
+ 	MajorName[48] = '物理系';
+ 	BrowseTimes[48] = 2447;
+ 	SemesterId[48] = '100660';
+ 	SemesterName[48] = '2012-2013春季学期';
+	OpenType[48] = '本班'; 	
+	StudentNum[48] = '62';
+	
+</script>
+
+<script language=javascript>
+ 	CourseId[49] = '99328';
+ 	CourseName[49] = '国际经济学';
+ 	CourseNo[49] = '40510763';
+ 	TeacherId[49] = '2010990161';
+ 	TeacherName[49] = '陆琳';
+ 	MajorId[49] = '051';
+ 	MajorName[49] = '经管学院';
+ 	BrowseTimes[49] = 2445;
+ 	SemesterId[49] = '100660';
+ 	SemesterName[49] = '2012-2013春季学期';
+	OpenType[49] = '本班'; 	
+	StudentNum[49] = '33';
+	
+</script>
+
+<TABLE border='0' borderColor='#707070' cellPadding='2' cellSpacing='0' width='800' class='NormalText' align='center'>
+  <!--DWLayoutTable-->
+  <tr > 
+    <td height="43" colspan="9" align="center" valign="top" bgcolor="#f7f7f7"> 
+      <form name="form2" method="post">
+        
+        共搜索到使用网络学堂的课程共2234门,显示第451到500门课. 
+        <br>
+        共45页. 第 
+        <input type="text" name="go_page" size="6" maxlength="20" value="10">
+        页 
+        <input type="hidden" name="student" value="2">
+		    <input type="hidden" name="semesterid" value="100660">
+		    <input type="hidden" name="pre_page" size="6" maxlength="20" value="1">
+        <input type="hidden" name="key_coursename" value="">
+        <input type="hidden" name="key_teachername" value="">
+        <input type="hidden" name="depart_id" value="999">
+        <input type="hidden" name="typepage" value="3">
+        <input type="submit" name="submitaction" value="确定">
+        
+        <input type="submit" name="submitaction" value=">>">
+        
+        
+        <input type="submit" name="submitaction" value="<<">
+        
+        
+
+      </form>
+注：仅有教师使用过网络学堂（如：发布公告、上载讲义，布置作业等操作之一）及学生点击次数超过50次的课程才显示在下面的课程列表中</td>
+  </tr>
+  </TABLE>
+  <TABLE border='1' borderColor='#f7f7f7' cellPadding='1' cellSpacing='0' width='800' borderColorDark=#f7f7f7  borderColorLight=#cccccc class='NormalText' align='center'>
+  <tr bgcolor="#2B50AE"> 
+    <td width="23%" height="24" bgcolor="#e4d8ae"><FONT color=000000 size="2">课程名称</font></td>
+    <td width="8%" bgcolor="#e4d8ae"><FONT color=000000 size="2">教师</font></td>
+    <td width="9%" bgcolor="#e4d8ae"><FONT color=000000 size="2">开课学期</font></td>
+    <td width="8%" bgcolor="#e4d8ae"><FONT color=000000 size="2">开放范围</font></td>
+    <td width="11%" bgcolor="#e4d8ae"><FONT color=000000 size="2">开课系所</font></td>
+    <td width="11%" bgcolor="#e4d8ae"><FONT color=000000 size="2">课内学生数</font></td>
+    <td width='10%' bgcolor="#e4d8ae"style='{cursor:hand;}' ><FONT color=000000 size='2'> 
+      浏览次数</font></td>
+  </tr>
+  <script language=javascript>
+<!--
+	if(CourseId != "")
+	for(i=0;i< 50;i++)
+
+	{
+			
+			document.write ("<tr>");
+			document.write ("<td  bgcolor='#f7f3ef' height='24'><a href='courseinfo.jsp?course_id=" + CourseId[i] +"' target='" + CourseId[i] +"'><FONT size='2'>" + CourseName[i] + "</font></a></td>");
+			document.write ("<td  bgcolor='#f7f3ef'><FONT  size='2'>" + TeacherName[i] + "</font></td>");
+			document.write ("<td  bgcolor='#f7f3ef'><FONT  size='2'>" + SemesterName[i] + "</font></td>");
+			document.write ("<td  bgcolor='#f7f3ef'><FONT  size='2'>" + OpenType[i] + "</font></td>");
+			document.write ("<td  bgcolor='#f7f3ef'><FONT  size='2'>" + MajorName[i] + "</font></td>");
+			document.write ("<td  bgcolor='#f7f3ef'><FONT  size='2'>" + StudentNum[i] + "</font></td>");
+			document.write ("<td  bgcolor='#f7f3ef'><FONT size='2'>" + BrowseTimes[i] + "</font>");
+			document.write ("</tr>");
+	}	
+//-->
+</script>
+</table>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" align="center" height="25" background="images/l_bg.gif">
+        <tr> 
+          <td>&nbsp; </td>
+        </tr>
+      </table>
+      
+
