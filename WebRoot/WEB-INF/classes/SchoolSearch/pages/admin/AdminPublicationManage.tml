@@ -5,44 +5,53 @@
 	
 	<div class="container">
 		<div class="row-fluid">
-			<div class="span6">
-				<div class="pubmgr-mylist">
-					<div class="section-header">
-						<h3>Your Publications:</h3>
-					</div>
-					<div class="row-fluid" id="tabZone">
-						<div class="t-tab-panel">
-							<div class="t-tab-content">
-								<div class="row-fluid">
-									<p>Publications: ${getPublicationListSize() }</p>
-									<t:loop source="publicationList" value="publication" index="index">
-										<ul id="pub_list" class="rich-info-list publication-list rich-list small">
-											<li pid="${publication.id }" class="s-item borderConf">
-												<div style="width:24px;" class="fix-span1 pull-left">
-													<span class="line-number">${lineNumber}</span>
-													<div style="border:solid 1px red;background-color:rgba(255,0,0,0.3);width:10px; height:10px;margin:1px;"></div>
-													<div style="border:solid 1px green;background-color:rgba(0,255,0,0.4);width:10px; height:10px;margin:1px;"></div>
-												</div>
-												<div style="margin-left:24px;margin-right:80px;" class="autospan">
-													<h3>${publication.title }</h3>
-													<div class="p authors">
-														<span class="">${publication.authors}</span>
+		
+		
+		<div class="p pull-left">
+			<t:eventlink event="deletePublication" zone="publicationListZone" context="[personId]" class="btn btn-primary">Not my publication</t:eventlink>
+		</div>
+		
+			<t:zone t:id="publicationListZone" id="publicationListZone" elementName="div">
+				<div class="span6">
+					<div class="pubmgr-mylist">
+						<div class="section-header">
+							<h3>Your Publications:</h3>
+						</div>
+						<div class="row-fluid" id="tabZone">
+							<div class="t-tab-panel">
+								<div class="t-tab-content">
+									<div class="row-fluid">
+										<p>Publications: ${publicationListSize}</p>
+										<t:loop source="publicationList" value="publication" index="index">
+											<ul id="pub_list" class="rich-info-list publication-list rich-list small">
+												<li pid="${publication.id }" class="s-item borderConf">
+													<div style="width:24px;" class="fix-span1 pull-left">
+														<span class="line-number">${lineNumber}</span>
 													</div>
-													<div class="p pull-left">
-														<span >${publication.jconf }</span> - <span>${publication.year }</span>
+													<div style="margin-left:24px;margin-right:80px;" class="autospan">
+														<h3><a target="_blank" class="title" href="${publication.url }"> ${publication.title }</a></h3>
+														<div class="p authors">
+															<span class="">${publication.authors}</span>
+														</div>
+														<div class="p pull-left">
+															<span >${publication.jconf }</span> - <span>${publication.year }</span>
+														</div>
+														<!-- <div class="p pull-left"> -->
+														<!-- <t:eventlink event="deletePublication" zone="^" context="[publication.id, personId]" class="btn btn-primary">Not my publication</t:eventlink> -->	
+														<!-- </div> -->
+														<div class="clear"></div>
 													</div>
-													<div class="clear"></div>
-												</div>
-											</li>
-										</ul>
-									</t:loop>
+												</li>
+											</ul>
+										</t:loop>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		
+			</t:zone>
+
 			<div class="span5">
 				<div class="pubmgr-mylist">
 					<div class="section-header">
@@ -56,6 +65,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </html>

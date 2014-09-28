@@ -169,12 +169,6 @@ public class DepartmentView {
 	DepartmentService departmentService;
 	
 	@Inject
-	private ComponentResources resources;
-	
-	@Inject
-	private JavaScriptSupport jsSupport;
-	
-	@Inject
 	private MonitorService monitor;
 	
 }

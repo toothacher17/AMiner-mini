@@ -8,8 +8,8 @@
 						<span class="line-number">${lineNumber }</span>
 					</div>
 					<div style="margin-left:28px;margin-right:0px;float: none; width: auto" class="autospan">
-						<!-- <h3><a target="_blank" class="title" href="${publication.url }">${publication.title }</a></h3> -->
-						<h3 class="title">${publication.title }</h3>
+						<h3><a target="_blank" class="title" href="${publication.url }">${publication.title }</a></h3>
+						<!-- <h3 class="title">${publication.title }</h3> -->
 						<div style="float:lefdt;margin-right:12px;" class="p authors">
 							<t:loop source="getAllAuthorPersonId()" value="authorPersonId" index="authorIndex" >
 								<t:if test= "authorPersonId">

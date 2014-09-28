@@ -30,12 +30,12 @@ public class DAOStructureBuilder {
 //		configList.add(new DBConfig("nsfc_aminer_combine", "nsfc_aminer_combine", //
 //				new String[]{"publication", "na_person", "na_author2pub", "jconf", "publication_ext", "contact_info"}));
 //	
-//		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"person_info"}));
+		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"person2publication"}));
 		
 //		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"course","course_detail", "department", "department2school", "person", "person_ext","person_info", "person_interest", "person_profile", "person_title", "person2course", "person2department", "person2publication", "personrelation", "publication", "publication_detail", "school"}));
 		
 //		all the tables in schooltest;
-		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"course", "course_detail", "department", "department2school", "person", "person_ext", "person_info", "person_interest", "person_profile", "person_title", "person2course", "person2department", "person2graduatepublication", "person2publication", "personrelation", "publication", "publication_detail", "school", "useredit", "userlog"}));
+//		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"course", "course_detail", "department", "department2school", "person", "person_ext", "person_info", "person_interest", "person_profile", "person_title", "person2course", "person2department", "person2graduatepublication", "person2publication", "personrelation", "publication", "publication_detail", "school", "useredit", "userlog"}));
 		
 		
 //		configList.add(new DBConfig("test", "test", new String[]{"dbtest"}));

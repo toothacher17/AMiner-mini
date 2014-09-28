@@ -104,6 +104,8 @@ public class PersonProfileComponent {
 		prepareData(_personId);
 		if(request.isXHR()) return profileZone.getBody(); 
 		else return null;
+//		System.out.println(">>><<<" + request);
+//		return profileZone.getBody();
 	}
 
 	public Object onActionFromCancel(Integer personId) {

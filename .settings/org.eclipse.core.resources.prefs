@@ -1,6 +1,7 @@
-#Mon Jun 09 16:32:27 CST 2014
+#Sat Sep 27 16:56:13 CST 2014
 eclipse.preferences.version=1
 encoding//src/SchoolSearch/components/Layout.tml=UTF-8
+encoding//src/SchoolSearch/components/admin/AdminEditableList.tml=UTF-8
 encoding//src/SchoolSearch/components/course/CourseList.tml=UTF-8
 encoding//src/SchoolSearch/components/graduatepublication/GraduatePublicationList.tml=UTF-8
 encoding//src/SchoolSearch/components/index/IndexLinkField.tml=UTF-8
@@ -14,6 +15,7 @@ encoding//src/SchoolSearch/components/person/PersonGraduatePublicationComponent.
 encoding//src/SchoolSearch/components/person/PersonInfoComponent.tml=UTF-8
 encoding//src/SchoolSearch/components/person/PersonList.tml=UTF-8
 encoding//src/SchoolSearch/components/person/PersonProfileComponent.tml=UTF-8
+encoding//src/SchoolSearch/components/person/PersonPublicationList.tml=UTF-8
 encoding//src/SchoolSearch/components/person/PersonRelationGraph.tml=UTF-8
 encoding//src/SchoolSearch/components/publication/PublicationList.tml=UTF-8
 encoding//src/SchoolSearch/components/publicationPager/PublicationPager.tml=UTF-8
@@ -26,6 +28,7 @@ encoding//src/SchoolSearch/components/user/UserResetPasswordComponent.tml=UTF-8
 encoding//src/SchoolSearch/pages/AdvancedSearch.tml=UTF-8
 encoding//src/SchoolSearch/pages/Index.tml=UTF-8
 encoding//src/SchoolSearch/pages/admin/AdminIndex.tml=UTF-8
+encoding//src/SchoolSearch/pages/admin/AdminModification.tml=UTF-8
 encoding//src/SchoolSearch/pages/admin/AdminPublicationManage.tml=UTF-8
 encoding//src/SchoolSearch/pages/course/CourseIndex.tml=UTF-8
 encoding//src/SchoolSearch/pages/department/DepartmentIndex.tml=UTF-8

@@ -16,7 +16,7 @@ import SchoolSearch.services.services.person.PersonService;
 import SchoolSearch.services.services.publication.PublicationService;
 import SchoolSearch.services.utils.Strings;
 
-public class AdminPublicationManage {
+public class AdminModification {
 
 	@Property
 	Integer personId;
@@ -38,34 +38,19 @@ public class AdminPublicationManage {
 	
 	
 	public Object onActivate(EventContext context) {
-//		if (null == publicationListZone) System.out.println(" <><>< start the zone is null");
-//		else System.out.println("<><><  start the zone is not null!");
-
 		if(context.getCount()>0)
 			personId = context.get(Integer.class, 0);
-		publicationList = publicationService.getPublicationsByPersonId(personId);
 		return true;
 	}
 	
 	@SetupRender
 	void setupRender() {
-//		publicationList = publicationService.getPublicationsByPersonId(personId);
 	}
 	
 	@AfterRender
 	void afterRender() {
 	}
 	
-	public Object onDeletePublication(EventContext context) {
-		personId = context.get(Integer.class, 0);
-		System.out.println("<><>< the person id is " + personId);
-//		publicationId = context.get(Integer.class, 0);
-		publicationList = publicationService.getPublicationsByPersonId(3);
-		System.out.println("<><><> the publicationList size is " + publicationList.size());
-		
-		return publicationListZone.getBody();
-//		return null;
-	}
 	
 	public Integer getPublicationListSize() {
 		return publicationList.size();

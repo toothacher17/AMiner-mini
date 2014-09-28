@@ -1,11 +1,14 @@
-package SchoolSearch.components.admin.publication;
+package SchoolSearch.components.admin;
 
 import java.util.Collections;
 import java.util.List;
 
 import org.apache.tapestry5.BindingConstants;
+import org.apache.tapestry5.EventContext;
+import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import SchoolSearch.services.dao.schooltest.model.SchooltestPerson;
@@ -16,14 +19,14 @@ import SchoolSearch.services.services.publication.PublicationService;
 import SchoolSearch.services.utils.ComparatorUtil;
 import SchoolSearch.services.utils.Strings;
 
-public class AdminPublicationEditableList {
+public class AdminEditableList {
 	@Parameter(allowNull = true)
 	List<Integer> publicationIdList;
 
 	@Parameter(allowNull = true)
 	List<SchooltestPublication> publicationList;
 	
-	@Parameter(allowNull = true)
+	@Parameter(allowNull = false)
 	Integer personId;
 
 	@Parameter(allowNull = true, value = "year", defaultPrefix = BindingConstants.LITERAL)
@@ -49,6 +52,9 @@ public class AdminPublicationEditableList {
 
 	@Property
 	SchooltestPublication _publication;
+	
+	@Property
+	Integer publicationId;
 
 	@Property
 	Integer index;
@@ -65,18 +71,23 @@ public class AdminPublicationEditableList {
 	@Property
 	Integer authorPersonId;
 
+	@InjectComponent
+	Zone publicationListZone;
+	
 	void setupRender() {
-		this._personId = personId;
+		if(null != personId)
+			this._personId = personId;
 		person = personService.getPerson(_personId);
-		if(null == publicationList) {
-			_publicationList = publicationService.getPublications(publicationIdList);
+//		if(null == publicationList) {
+			_publicationList = publicationService.getPublicationsByPersonId(_personId);
+			System.out.println("this is the test of whether the system is working " + _publicationList.size());
 			if (orderBy.equalsIgnoreCase("year")) {
 //				Collections.sort(_publicationList, Collections.reverseOrder(SchooltestPublication.defaultComparator));
 				Collections.sort(_publicationList, Collections.reverseOrder(new ComparatorUtil.GeneralComparator<SchooltestPublication>(SchooltestPublication.class, "year")));
 			}
-		} else {
-			_publicationList = publicationList;
-		}
+//		} else {
+//			_publicationList = publicationList;
+//		}
 	}
 
 	String[] authorNames = null;
@@ -110,12 +121,16 @@ public class AdminPublicationEditableList {
 		return authorNames[authorIndex];
 	}
 
+	public Integer getPublicationListSize() {
+		return _publicationList.size();
+	}
+	
 	public boolean isLastAuthor() {
 		return authorIndex >= authorNames.length - 1;
 	}
 
 	public boolean isSelf() {
-		return authorPersonId == personId;
+		return authorPersonId == _personId;
 	}
 
 	public Integer getLineNumber() {
@@ -130,6 +145,16 @@ public class AdminPublicationEditableList {
 		}
 	}
 
+	public Object onDeletePublication(EventContext context) {
+		this._personId = context.get(Integer.class, 1);
+		publicationId = context.get(Integer.class, 0);
+//		this._publicationList = publicationService.getPublicationsByPersonId(12);
+		publicationService.updatePerson2Publication(_personId, publicationId);
+		this._publicationList = publicationService.getPublicationsByPersonId(_personId);
+		System.out.println("<><><>< the publication size is " +  _publicationList.size());
+		return publicationListZone.getBody();
+	} 
+	
 	@Inject
 	PersonService personService;
 

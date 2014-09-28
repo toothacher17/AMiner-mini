@@ -6,15 +6,19 @@ public class SchooltestPerson2publication {
 	Integer publication_id;
 	Integer person_id;
 	Integer position;
+	Integer label;
+	Integer confirmed;
 
 	public SchooltestPerson2publication() {
 	}
 
-	public SchooltestPerson2publication(Integer id,Integer publication_id,Integer person_id,Integer position) {
+	public SchooltestPerson2publication(Integer id,Integer publication_id,Integer person_id,Integer position,Integer label,Integer confirmed) {
 		this.id = id;
 		this.publication_id = publication_id;
 		this.person_id = person_id;
 		this.position = position;
+		this.label = label;
+		this.confirmed = confirmed;
 	}
 
 	public Integer getId() {
@@ -29,6 +33,12 @@ public class SchooltestPerson2publication {
 	public Integer getPosition() {
 		return this.position;
 	}
+	public Integer getLabel() {
+		return this.label;
+	}
+	public Integer getConfirmed() {
+		return this.confirmed;
+	}
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -41,5 +51,11 @@ public class SchooltestPerson2publication {
 	}
 	public void setPosition(Integer position) {
 		this.position = position;
+	}
+	public void setLabel(Integer label) {
+		this.label = label;
+	}
+	public void setConfirmed(Integer confirmed) {
+		this.confirmed = confirmed;
 	}
 }

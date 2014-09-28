@@ -28,11 +28,11 @@ public class PublicationServiceImpl implements PublicationService{
 		List<Integer> publicatoin_ids = publicationCacheService.getPublicationIdsByPersonId(id);
 		List<Integer> publication_ids = new ArrayList<Integer>();
 		List<SchooltestPublication> publications = new ArrayList<SchooltestPublication>(); 
-		if(null == publicatoin_ids) {
+		if(null == publicatoin_ids || publication_ids.size() == 0) {
 			List<SchooltestPerson2publication> result = personPublicationDao.selectByIntegerField("person_id", id);
 			for(SchooltestPerson2publication everyresult : result) {
-//				publicatoin_ids.add(everyresult.getPublicationId());
-				publication_ids.add(everyresult.getPublicationId());
+				if(everyresult.getConfirmed() == 1)
+					publication_ids.add(everyresult.getPublicationId());
 			}
 			publicationCacheService.setPublicationIdsByPersonId(id, publication_ids);
 			for(Integer publication_id : publication_ids) {
@@ -64,7 +64,8 @@ public class PublicationServiceImpl implements PublicationService{
 			List<SchooltestPerson2publication> result = personPublicationDao.selectByIntegerField("person_id", id);
 			for(SchooltestPerson2publication everyresult : result) {
 //				publicatoin_ids.add(everyresult.getPublicationId());
-				publication_ids.add(everyresult.getPublicationId());
+				if(everyresult.getConfirmed() == 1)
+					publication_ids.add(everyresult.getPublicationId());
 			}
 			publicationCacheService.setPublicationIdsByPersonId(id, publication_ids);
 			return publication_ids;
@@ -120,8 +121,13 @@ public class PublicationServiceImpl implements PublicationService{
 	public List<SchooltestPerson2publication> getPersonPublicationsByPersonId(
 			Integer person_id) {
 		List<SchooltestPerson2publication> result = publicationCacheService.getPerson2PublicationListByPersonId(person_id);
-		if(null == result) {
+		if(null == result || result.size() == 0) {
 			result = personPublicationDao.selectByIntegerField("person_id", person_id);
+//			List<SchooltestPerson2publication> tempList = personPublicationDao.selectByIntegerField("person_id", person_id);
+//			for(SchooltestPerson2publication temp : tempList) {
+//				if(temp.getRight() == 1) 
+//					result.add(temp);
+//			}
 			publicationCacheService.setPerson2PublicationIndexByPersonId(person_id, result);
 		}
 		return result;
@@ -134,6 +140,10 @@ public class PublicationServiceImpl implements PublicationService{
 		List<SchooltestPerson2publication> result = new ArrayList<SchooltestPerson2publication>();
 		for(Integer pid : person_ids) {
 			List<SchooltestPerson2publication> resulttmp = personPublicationDao.selectByIntegerField("person_id", pid);
+//			for(SchooltestPerson2publication p2p : resulttmp) {
+////				if(p2p.getRight() == 1) 
+//					result.add(p2p);
+//			}
 			result.addAll(resulttmp);
 		}
 		return result;
@@ -142,5 +152,34 @@ public class PublicationServiceImpl implements PublicationService{
 	@Inject
 	PublicationCacheService publicationCacheService;
 
+	@Override
+	public void updatePerson2Publication(Integer personId, Integer publicationId) {
+		// TODO Auto-generated method stub
+		List<SchooltestPerson2publication> publications = getPersonPublicationsByPersonId(personId);
+		for(SchooltestPerson2publication p2p : publications) {
+//			System.out.println(">>>>>>>>> it works!");
+			System.out.println("the p2p publication id is " + p2p.getPublicationId());
+			if (p2p.getPublicationId().equals(publicationId)) {
+				System.out.println(">>>>>>>>> it matchs!");
+				p2p.setLabel(1);
+				p2p.setConfirmed(0);
+				personPublicationDao.update(p2p);
+				System.out.println(" >>>>>> sucessfully update!sss");
+//				publicationCacheService.setPerson2PublicationIndexByPersonId(personId, null);
+				
+				publicationCacheService.getPerson2PublicationListByPersonId(personId).clear();
+				System.out.println(" >>>>>> sucessfully clear");
+				
+//				publicationCacheService.setPublicationIdsByPersonId(personId, null);
+				
+				publicationCacheService.getPublicationIdsByPersonId(personId).clear();
+				
+//				publicationCacheService.setPerson2PublicationIndexByPubId(publicationId, null);
+				
+				publicationCacheService.getPerson2PublicationListByPubId(publicationId).clear();
+				break;
+			}
+		}
+	}
 
 }

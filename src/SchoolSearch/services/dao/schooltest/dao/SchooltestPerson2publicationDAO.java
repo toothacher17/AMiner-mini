@@ -56,7 +56,7 @@ public class SchooltestPerson2publicationDAO {
 	}
 
 	public int insertReturnId(SchooltestPerson2publication obj) {
-		String sql = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position) VALUES ", dbName);
+		String sql = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position,label,confirmed) VALUES ", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -79,7 +79,7 @@ public class SchooltestPerson2publicationDAO {
 	}
 
 	public void insert(SchooltestPerson2publication obj) {
-		String sql = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position) VALUES (?,?,?,?)", dbName);
+		String sql = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position,label,confirmed) VALUES (?,?,?,?,?,?)", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -99,7 +99,7 @@ public class SchooltestPerson2publicationDAO {
 	 */
 	@Deprecated
 	public void insertBatch(List<SchooltestPerson2publication> objList) {
-		String sql = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position) VALUES (?,?,?,?)", dbName);
+		String sql = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position,label,confirmed) VALUES (?,?,?,?,?,?)", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -122,11 +122,11 @@ public class SchooltestPerson2publicationDAO {
 	public void insertMultiple(List<SchooltestPerson2publication> objList) {
 		if (objList.size() == 0)
 			return;
-		StringBuilder sqlBuilder = new StringBuilder(String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position) VALUES ", dbName));
+		StringBuilder sqlBuilder = new StringBuilder(String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position,label,confirmed) VALUES ", dbName));
 		for (int i = 0; i < objList.size(); i++) {
 			if (i != 0)
 				sqlBuilder.append(",");
-			sqlBuilder.append("(?,?,?,?)");
+			sqlBuilder.append("(?,?,?,?,?,?)");
 		}
 		String sql = sqlBuilder.toString();
 		DBConnection conn = pool.getConnection();
@@ -148,12 +148,12 @@ public class SchooltestPerson2publicationDAO {
 	public void insertMultipleBatch(List<SchooltestPerson2publication> objList, int multipleSize) {
 		if (objList.size() == 0)
 			return;
-		String sqlHead = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position) VALUES ", dbName);
+		String sqlHead = String.format("INSERT INTO %s.person2publication(id,publication_id,person_id,position,label,confirmed) VALUES ", dbName);
 		StringBuilder sqlBuilder = new StringBuilder(sqlHead);
 		for (int i = 0; i < multipleSize; i++) {
 			if (i != 0)
 				sqlBuilder.append(",");
-			sqlBuilder.append("(?,?,?,?)");
+			sqlBuilder.append("(?,?,?,?,?,?)");
 		}
 		String sql = sqlBuilder.toString();
 		DBConnection conn = pool.getConnection();
@@ -224,7 +224,7 @@ public class SchooltestPerson2publicationDAO {
 	 * update all field anchor by field <b>id</b>
 	 */
 	public void update(SchooltestPerson2publication obj) {
-		String sql = String.format("UPDATE %s.person2publication SET id = ?,publication_id = ?,person_id = ?,position = ? WHERE id = ?", dbName);
+		String sql = String.format("UPDATE %s.person2publication SET id = ?,publication_id = ?,person_id = ?,position = ?,label = ?,confirmed = ? WHERE id = ?", dbName);
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
 		try {
@@ -243,7 +243,7 @@ public class SchooltestPerson2publicationDAO {
 	 * batch update all field anchor by each elements' field <b>id</b>
 	 */
 	public void updateBatch(List<SchooltestPerson2publication> objList) {
-		String sql = String.format("UPDATE %s.person2publication SET id = ?,publication_id = ?,person_id = ?,position = ? WHERE id = ?", dbName);
+		String sql = String.format("UPDATE %s.person2publication SET id = ?,publication_id = ?,person_id = ?,position = ?,label = ?,confirmed = ? WHERE id = ?", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -1059,6 +1059,8 @@ public class SchooltestPerson2publicationDAO {
 		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getPublicationId());
 		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getPersonId());
 		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getPosition());
+		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getLabel());
+		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getConfirmed());
 
 		return indexCount;
 	}
@@ -1069,6 +1071,8 @@ public class SchooltestPerson2publicationDAO {
 		obj.setPublicationId(rs.getInt("publication_id"));
 		obj.setPersonId(rs.getInt("person_id"));
 		obj.setPosition(rs.getInt("position"));
+		obj.setLabel(rs.getInt("label"));
+		obj.setConfirmed(rs.getInt("confirmed"));
 
 		return obj;
 	}
