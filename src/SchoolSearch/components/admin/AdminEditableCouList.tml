@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	<div class="container-fluid none">
+		<t:zone elementName="div" t:id="courseListZone" id="courseListZone">
+			<t:if test="getShowType()">
+				<div class="section-header">
+					<h3>Your Courses: ${getCourseListSize() }</h3>
+				</div>
+				<ul id="pub_list" class="rich-info-list publication-list rich-list small"> 
+					<t:loop source="courseList" value="course" index="index">
+						<li pid="${course.id}" class="s-item borderConf">
+							<div style="width:28px; margin-left: 0px;" class="fix-span1 pull-left">
+								<span class="line-number">${lineNumber }</span>
+							</div>
+							<div style="margin-left:28px;margin-right:0px;float: none; width: auto" class="autospan">
+								<div style="float:lefdt;margin-right:12px;" class="p authors">
+									<h3><a target="_blank" href="${course.url }" >${course.courseName } </a></h3>
+									授课老师：<span class = "highlight"> ${course.teacherName }</span>
+									<br></br>
+									<span>授课院系： ${course.majorName }</span>
+								</div>
+								<div class="span8" style="margin-left: -5px;">
+									<t:loop source="getAllSemesternameList()" value="semester" >
+										<p style="margin-left: 10px;" shape="rect" class="label label-info capitalize light"> ${semester } 
+										<!-- <a target="_blank" href="${geturl() }" > ${course.semesterName } </a> -->
+										
+										</p>
+									</t:loop>
+								</div>
+										
+								<div class="p pull-left">
+									<t:eventlink event="deleteCourse" zone="^" context="[course.id, personId]" class="btn btn-primary">Not my Course</t:eventlink>
+								</div>					
+								
+								<div class="p">
+									<div class="pull-right label-area">
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							
+						</li>
+					</t:loop>
+				</ul>
+					
+				
+				
+			</t:if>
+		</t:zone>
+	</div>
+</t:container>

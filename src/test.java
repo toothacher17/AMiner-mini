@@ -2,10 +2,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
+
+import SchoolSearch.services.dao.schooltest.dao.SchooltestPersonDAO;
+import SchoolSearch.services.dao.schooltest.model.SchooltestPerson;
 
 
 public class test {
-	public static void main(String[] args) {
+	public static void testIKA() {
 		InputStream is = test.class.getClassLoader().getResourceAsStream("IKAnalyzer/ext.dic");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		String line = null;
@@ -17,4 +21,15 @@ public class test {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void testIO () {
+		List<SchooltestPerson> walkAll = SchooltestPersonDAO.getInstance().walkAll();
+		System.out.println("the walkall size is " + walkAll.size());
+	}
+	
+	
+	public static void main(String[] args) {
+		testIO();
+	}
 }
+

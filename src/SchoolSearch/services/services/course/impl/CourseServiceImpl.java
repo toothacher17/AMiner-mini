@@ -129,7 +129,7 @@ public class CourseServiceImpl implements CourseService {
 			List<SchooltestPerson2course> tmp = personCourseDao.selectByIntegerField("id", id);
 			List<Integer> teacherIds = new ArrayList<Integer>();
 			for(SchooltestPerson2course everytmp : tmp) {
-				teacherIds.add(everytmp.getPersonId());
+				if(everytmp.getConfirmed() == 1) teacherIds.add(everytmp.getPersonId());
 			}
 			courseTeachers = personService.getPersonList(teacherIds)  ;
 			courseCacheService.setCourseTeacherCache(id, courseTeachers);
@@ -145,13 +145,13 @@ public class CourseServiceImpl implements CourseService {
 			return null;
 		}
 		List<SchooltestCourse> result = courseCacheService.getRelatedCourseListFromCache(id);
-		if(null==result){
+		if(null==result || result.size() == 0){
 //			result = getCourse(personCourseDao.selectByIntegerField("person_id", id));
 			
 			List<SchooltestPerson2course> tmp = personCourseDao.selectByIntegerField("person_id", id);
 			List<Integer> tmpIdList = new ArrayList<Integer>();
 			for(SchooltestPerson2course everytmp : tmp) {
-				tmpIdList.add(everytmp.getId());
+				if(everytmp.getConfirmed() == 1) tmpIdList.add(everytmp.getId());
 			}
 			result = courseDao.selectByIdList(tmpIdList);
 			courseCacheService.setRelatedCourseListCache(id,result);
@@ -169,6 +169,33 @@ public class CourseServiceImpl implements CourseService {
 		for(SchooltestCourse everyCourse : test){
 			System.out.println(everyCourse.getId() + "\t"+everyCourse.getCourseName() + "\t"+everyCourse.getTeacherName() + "\t"+everyCourse.getSemesterName());
 		}
+	}
+
+
+
+	@Override
+	public void updatePerson2Course(Integer personId, Integer courseId) {
+		// TODO Auto-generated method stub
+		List<SchooltestPerson2course> courses = personCourseDao.selectByIntegerField("person_id", personId);
+		for(SchooltestPerson2course p2c : courses) {
+			if (p2c.getId().equals(courseId)) {
+				System.out.println(">>>> it mataches the course!");
+				p2c.setLabel(1);
+				p2c.setConfirmed(0);
+				personCourseDao.update(p2c);
+				System.out.println("sucessfully updates! ~~~~");
+				
+				courseCacheService.getRelatedCourseListFromCache(personId).clear();
+				if(null != courseCacheService.getCourseTeacherFromCache(courseId))
+					courseCacheService.getCourseTeacherFromCache(courseId).clear();
+				break;
+			}
+			
+		}
+		
+		
+		
+		
 	}
 	
 }

@@ -20,4 +20,6 @@ public interface CourseService {
 	//get related courseList by personId	
 	List<SchooltestCourse> getRelatedCourseList(Integer id);
 	String getCourseUrl(Integer id);
+	
+	void updatePerson2Course(Integer personId, Integer courseId);
 }

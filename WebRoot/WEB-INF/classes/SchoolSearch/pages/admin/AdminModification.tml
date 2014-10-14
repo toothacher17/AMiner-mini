@@ -7,21 +7,12 @@
 		<div class="row-fluid">
 			
 			<div class="span6">
-				<t:admin.EditableList personId="personId"> </t:admin.EditableList>
+				<t:admin.EditablePubList personId="personId"> </t:admin.EditablePubList>
 			</div>
 			
-			<div class="span5">
-				<div class="pubmgr-mylist">
-					<div class="section-header">
-						<h3>Other Publications:</h3>
-					</div>
-					<div class="row-fluid t-zone" id="otherTabZone">
-						<div class="t-tab-panel">
-							<div class="t-tab-content">
-							</div>
-						</div>
-					</div>
-				</div>
+			
+			<div class="span6">
+				<t:admin.EditableCouList personId="personId"> </t:admin.EditableCouList>
 			</div>
 			
 		</div>

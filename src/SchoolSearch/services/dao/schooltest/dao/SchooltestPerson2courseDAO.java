@@ -56,7 +56,7 @@ public class SchooltestPerson2courseDAO {
 	}
 
 	public int insertReturnId(SchooltestPerson2course obj) {
-		String sql = String.format("INSERT INTO %s.person2course(id,person_id) VALUES ", dbName);
+		String sql = String.format("INSERT INTO %s.person2course(id,person_id,label,confirmed) VALUES ", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -79,7 +79,7 @@ public class SchooltestPerson2courseDAO {
 	}
 
 	public void insert(SchooltestPerson2course obj) {
-		String sql = String.format("INSERT INTO %s.person2course(id,person_id) VALUES (?,?)", dbName);
+		String sql = String.format("INSERT INTO %s.person2course(id,person_id,label,confirmed) VALUES (?,?,?,?)", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -99,7 +99,7 @@ public class SchooltestPerson2courseDAO {
 	 */
 	@Deprecated
 	public void insertBatch(List<SchooltestPerson2course> objList) {
-		String sql = String.format("INSERT INTO %s.person2course(id,person_id) VALUES (?,?)", dbName);
+		String sql = String.format("INSERT INTO %s.person2course(id,person_id,label,confirmed) VALUES (?,?,?,?)", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -122,11 +122,11 @@ public class SchooltestPerson2courseDAO {
 	public void insertMultiple(List<SchooltestPerson2course> objList) {
 		if (objList.size() == 0)
 			return;
-		StringBuilder sqlBuilder = new StringBuilder(String.format("INSERT INTO %s.person2course(id,person_id) VALUES ", dbName));
+		StringBuilder sqlBuilder = new StringBuilder(String.format("INSERT INTO %s.person2course(id,person_id,label,confirmed) VALUES ", dbName));
 		for (int i = 0; i < objList.size(); i++) {
 			if (i != 0)
 				sqlBuilder.append(",");
-			sqlBuilder.append("(?,?)");
+			sqlBuilder.append("(?,?,?,?)");
 		}
 		String sql = sqlBuilder.toString();
 		DBConnection conn = pool.getConnection();
@@ -148,12 +148,12 @@ public class SchooltestPerson2courseDAO {
 	public void insertMultipleBatch(List<SchooltestPerson2course> objList, int multipleSize) {
 		if (objList.size() == 0)
 			return;
-		String sqlHead = String.format("INSERT INTO %s.person2course(id,person_id) VALUES ", dbName);
+		String sqlHead = String.format("INSERT INTO %s.person2course(id,person_id,label,confirmed) VALUES ", dbName);
 		StringBuilder sqlBuilder = new StringBuilder(sqlHead);
 		for (int i = 0; i < multipleSize; i++) {
 			if (i != 0)
 				sqlBuilder.append(",");
-			sqlBuilder.append("(?,?)");
+			sqlBuilder.append("(?,?,?,?)");
 		}
 		String sql = sqlBuilder.toString();
 		DBConnection conn = pool.getConnection();
@@ -224,7 +224,7 @@ public class SchooltestPerson2courseDAO {
 	 * update all field anchor by field <b>id</b>
 	 */
 	public void update(SchooltestPerson2course obj) {
-		String sql = String.format("UPDATE %s.person2course SET id = ?,person_id = ? WHERE id = ?", dbName);
+		String sql = String.format("UPDATE %s.person2course SET id = ?,person_id = ?,label = ?,confirmed = ? WHERE id = ?", dbName);
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
 		try {
@@ -243,7 +243,7 @@ public class SchooltestPerson2courseDAO {
 	 * batch update all field anchor by each elements' field <b>id</b>
 	 */
 	public void updateBatch(List<SchooltestPerson2course> objList) {
-		String sql = String.format("UPDATE %s.person2course SET id = ?,person_id = ? WHERE id = ?", dbName);
+		String sql = String.format("UPDATE %s.person2course SET id = ?,person_id = ?,label = ?,confirmed = ? WHERE id = ?", dbName);
 
 		DBConnection conn = pool.getConnection();
 		PreparedStatement ps = null;
@@ -1057,6 +1057,8 @@ public class SchooltestPerson2courseDAO {
 	public int _constructPS(PreparedStatement ps, SchooltestPerson2course obj, int indexCount) throws SQLException {
 		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getId());
 		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getPersonId());
+		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getLabel());
+		SqlConstructUtil.__safeSetInt(ps, ++indexCount, obj.getConfirmed());
 
 		return indexCount;
 	}
@@ -1065,6 +1067,8 @@ public class SchooltestPerson2courseDAO {
 		SchooltestPerson2course obj = new SchooltestPerson2course();
 		obj.setId(rs.getInt("id"));
 		obj.setPersonId(rs.getInt("person_id"));
+		obj.setLabel(rs.getInt("label"));
+		obj.setConfirmed(rs.getInt("confirmed"));
 
 		return obj;
 	}

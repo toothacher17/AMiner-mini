@@ -21,17 +21,17 @@ public class AdminModification {
 	@Property
 	Integer personId;
 	
-	@Property
-	List<SchooltestPublication> publicationList;
-	
-	@Property
-	SchooltestPublication publication;
+//	@Property
+//	List<SchooltestPublication> publicationList;
+//	
+//	@Property
+//	SchooltestPublication publication;
 	
 	@Property
 	Integer publicationId;
 	
-	@Property
-	Integer index;
+//	@Property
+//	Integer index;
 	
 	@Property 
 	Zone publicationListZone;
@@ -52,23 +52,26 @@ public class AdminModification {
 	}
 	
 	
-	public Integer getPublicationListSize() {
-		return publicationList.size();
-	}
-	
-	public Integer getLineNumber() {
-		return publicationList.size() - index;
-	}
 	
 	
 	
+//	public Integer getPublicationListSize() {
+//		return publicationList.size();
+//	}
+//	
+//	public Integer getLineNumber() {
+//		return publicationList.size() - index;
+//	}
+//	
+//	
+//	
+//	
+//	
+//	@Inject
+//	PublicationService publicationService;
 	
-	
-	@Inject
-	PublicationService publicationService;
-	
-	@Inject
-	PersonService personService;
+//	@Inject
+//	PersonService personService;
 	
 	
 }

@@ -1,7 +1,8 @@
-#Sat Sep 27 16:56:13 CST 2014
+#Sat Oct 11 18:52:44 GMT+08:00 2014
 eclipse.preferences.version=1
 encoding//src/SchoolSearch/components/Layout.tml=UTF-8
-encoding//src/SchoolSearch/components/admin/AdminEditableList.tml=UTF-8
+encoding//src/SchoolSearch/components/admin/AdminEditableCouList.tml=UTF-8
+encoding//src/SchoolSearch/components/admin/AdminEditablePubList.tml=UTF-8
 encoding//src/SchoolSearch/components/course/CourseList.tml=UTF-8
 encoding//src/SchoolSearch/components/graduatepublication/GraduatePublicationList.tml=UTF-8
 encoding//src/SchoolSearch/components/index/IndexLinkField.tml=UTF-8

@@ -30,7 +30,7 @@ public class DAOStructureBuilder {
 //		configList.add(new DBConfig("nsfc_aminer_combine", "nsfc_aminer_combine", //
 //				new String[]{"publication", "na_person", "na_author2pub", "jconf", "publication_ext", "contact_info"}));
 //	
-		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"person2publication"}));
+		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"person2course"}));
 		
 //		configList.add(new DBConfig("schooltest", "schooltest", new String[]{"course","course_detail", "department", "department2school", "person", "person_ext","person_info", "person_interest", "person_profile", "person_title", "person2course", "person2department", "person2publication", "personrelation", "publication", "publication_detail", "school"}));
 		

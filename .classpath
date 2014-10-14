@@ -24,7 +24,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-javadoc-5.3.7.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tapestry-yuicompressor-5.3.7.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javassist.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.10.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javacsv-2.0.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-analyzers-common-4.3.0.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lucene/lucene-analyzers-icu-4.3.0.jar"/>
@@ -51,6 +50,7 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/htmllexer.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htmlparser/htmlparser.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/other/daoGenerator.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>

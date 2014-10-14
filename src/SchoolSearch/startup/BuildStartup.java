@@ -12,13 +12,13 @@ public class BuildStartup {
 		trie.rebuild();
 		System.out.println("[trie rebuild finished]");
 		
-		LuceneIndexBuilder lib = new LuceneIndexBuilder();
-		try {
-			lib.makeLuceneIndex();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println("[lucene index rebuild finished]");
+//		LuceneIndexBuilder lib = new LuceneIndexBuilder();
+//		try {
+//			lib.makeLuceneIndex();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println("[lucene index rebuild finished]");
 		T5RegistryHelper.shutdown();
 	}
 }
