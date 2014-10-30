@@ -23,4 +23,9 @@ public interface PublicationService {
 	List<SchooltestPerson2publication> getPersonPublicationsByPersonIds(List<Integer> person_ids);
 	
 	void updatePerson2Publication(Integer personId, Integer publicationId);
+	
+//	List<SchooltestPublication> sortByScore(List<SchooltestPublication> input);
+		
+	
+	
 }

@@ -138,10 +138,15 @@ public class AdminEditablePubList {
 	}
 
 	public String getPublicationBorderClass() {
-		if (_publication.getType().equals("conf")) {
+		if(null == _publication.getType()) {
 			return "borderConf";
-		} else {
-			return "borderJournal";
+		}else {
+			
+			if (_publication.getType().equals("conf")) {
+				return "borderConf";
+			} else {
+				return "borderJournal";
+			}
 		}
 	}
 
@@ -151,6 +156,7 @@ public class AdminEditablePubList {
 //		this._publicationList = publicationService.getPublicationsByPersonId(12);
 		publicationService.updatePerson2Publication(_personId, publicationId);
 		this._publicationList = publicationService.getPublicationsByPersonId(_personId);
+		this.person = personService.getPerson(_personId);
 		System.out.println("<><><>< the publication size is " +  _publicationList.size());
 		return publicationListZone.getBody();
 	} 

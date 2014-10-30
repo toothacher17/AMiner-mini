@@ -4,6 +4,9 @@ package SchoolSearch.services.services.publication.impl;
  * @author GCR
  */
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -181,5 +184,31 @@ public class PublicationServiceImpl implements PublicationService{
 			}
 		}
 	}
+
+//	@Override
+//	public List<SchooltestPublication> sortByScore(List<SchooltestPublication> input) {
+//		
+//		
+//		Collections.sort(input, new Comparator<SchooltestPublication>() {
+//
+//			@Override
+//			public int compare(SchooltestPublication o1, SchooltestPublication o2) {
+//				// TODO Auto-generated method stub
+//				if(Double.parseDouble(o1.getScore()) == Double.parseDouble(o2.getSource())) 
+//					return Integer.parseInt(o1.getYear()) - Integer.parseInt(o2.getYear());
+//				else if (Double.parseDouble(o1.get)) {
+//					
+//				} else {
+//					
+//				}
+//					
+//			}
+//		
+//		});
+//		
+//		
+//		
+//		return input;
+//	}
 
 }

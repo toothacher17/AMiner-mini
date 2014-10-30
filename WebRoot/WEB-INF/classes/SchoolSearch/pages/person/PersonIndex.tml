@@ -36,6 +36,9 @@
 			<t:person.infoComponent personId="person.id" field="literal:fields" title="研究领域"></t:person.infoComponent>
 			<t:person.infoComponent personId="person.id" field="literal:summary" title="研究概况" newLineRegex="[\n]+"></t:person.infoComponent>
 			<t:person.infoComponent personId="person.id" field="literal:experience" title="工作履历"></t:person.infoComponent>
+			
+			<t:pagelink page="admin/modification" context="[person.id]" class="btn btn-mini btn-inverse btn-clear">管理我的课程和论文</t:pagelink>
+			
 			<t:if test="courseList">
 				<div class="row">
 					<div class="span8">
@@ -56,7 +59,6 @@
 				<div class="row">
 					<div class="span8">
 						<div class="auto-hide-container t-zone">
-							<t:pagelink page="admin/modification" context="[person.id]" class="btn btn-mini btn-inverse btn-clear auto-hide">修改我的论文</t:pagelink>
 							<div class="section-header">
 								<h2> 发表论文
 								</h2>

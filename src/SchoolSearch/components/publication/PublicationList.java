@@ -123,10 +123,14 @@ public class PublicationList {
 	}
 
 	public String getPublicationBorderClass() {
-		if (_publication.getType().equals("conf")) {
-			return "borderConf";
-		} else {
+		if(null == _publication.getType()) {
 			return "borderJournal";
+		}else {
+			if (_publication.getType().equals("conf")) {
+				return "borderConf";
+			} else {
+				return "borderJournal";
+			}
 		}
 	}
 

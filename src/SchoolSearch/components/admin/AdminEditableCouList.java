@@ -166,6 +166,7 @@ public class AdminEditableCouList {
 //		this._publicationList = publicationService.getPublicationsByPersonId(12);
 		courseService.updatePerson2Course(_personId, courseId);
 		this._courseList = courseService.getRelatedCourseList(_personId);
+		this.person = personService.getPerson(_personId);
 		System.out.println("<><><>< the publication size is " +  _courseList.size());
 		return courseListZone.getBody();
 	} 

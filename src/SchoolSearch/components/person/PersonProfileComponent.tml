@@ -14,7 +14,9 @@
 									<a shape="rect" class="btn btn-small light" target="_blank" href="http://arnetminer.org/person/-${author_id }.html">Am</a>
 								</t:if>
 							</div>
-							<h1 class="pull-leftd">${name }</h1>
+							<t:pagelink page="person" context="personId">
+								<h1 class="pull-leftd">${name }</h1>
+							</t:pagelink>
 						</div>
 					</div>
 					<div class="clear"></div>

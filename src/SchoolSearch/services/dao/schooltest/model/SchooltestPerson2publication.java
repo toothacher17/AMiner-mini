@@ -6,17 +6,19 @@ public class SchooltestPerson2publication {
 	Integer publication_id;
 	Integer person_id;
 	Integer position;
+	String score;
 	Integer label;
 	Integer confirmed;
 
 	public SchooltestPerson2publication() {
 	}
 
-	public SchooltestPerson2publication(Integer id,Integer publication_id,Integer person_id,Integer position,Integer label,Integer confirmed) {
+	public SchooltestPerson2publication(Integer id,Integer publication_id,Integer person_id,Integer position,String score,Integer label,Integer confirmed) {
 		this.id = id;
 		this.publication_id = publication_id;
 		this.person_id = person_id;
 		this.position = position;
+		this.score = score;
 		this.label = label;
 		this.confirmed = confirmed;
 	}
@@ -32,6 +34,9 @@ public class SchooltestPerson2publication {
 	}
 	public Integer getPosition() {
 		return this.position;
+	}
+	public String getScore() {
+		return this.score;
 	}
 	public Integer getLabel() {
 		return this.label;
@@ -51,6 +56,9 @@ public class SchooltestPerson2publication {
 	}
 	public void setPosition(Integer position) {
 		this.position = position;
+	}
+	public void setScore(String score) {
+		this.score = score;
 	}
 	public void setLabel(Integer label) {
 		this.label = label;

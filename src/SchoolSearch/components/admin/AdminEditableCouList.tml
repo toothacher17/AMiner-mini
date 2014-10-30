@@ -4,7 +4,7 @@
 		<t:zone elementName="div" t:id="courseListZone" id="courseListZone">
 			<t:if test="getShowType()">
 				<div class="section-header">
-					<h3>Your Courses: ${getCourseListSize() }</h3>
+					<h3>${person.name}的课程： ${getCourseListSize() }</h3>
 				</div>
 				<ul id="pub_list" class="rich-info-list publication-list rich-list small"> 
 					<t:loop source="courseList" value="course" index="index">
@@ -19,17 +19,15 @@
 									<br></br>
 									<span>授课院系： ${course.majorName }</span>
 								</div>
-								<div class="span8" style="margin-left: -5px;">
+								<!-- <div class="span8" style="margin-left: -5px;">
 									<t:loop source="getAllSemesternameList()" value="semester" >
 										<p style="margin-left: 10px;" shape="rect" class="label label-info capitalize light"> ${semester } 
-										<!-- <a target="_blank" href="${geturl() }" > ${course.semesterName } </a> -->
-										
 										</p>
 									</t:loop>
-								</div>
+								</div> -->
 										
-								<div class="p pull-left">
-									<t:eventlink event="deleteCourse" zone="^" context="[course.id, personId]" class="btn btn-primary">Not my Course</t:eventlink>
+								<div class="p pull-right">
+									<t:eventlink event="deleteCourse" zone="^" context="[course.id, personId]" class="label label-info capitalize light" shape="rect">删除</t:eventlink>
 								</div>					
 								
 								<div class="p">

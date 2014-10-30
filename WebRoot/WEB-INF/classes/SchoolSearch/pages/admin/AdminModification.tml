@@ -4,6 +4,29 @@
 	t:currentPage="Index">
 	
 	<div class="container">
+		<div class="row">
+			<div class="span7">		
+				<div class="row-fluid">
+					<div style="margin-top:4px;width: 160px;" class="span3">
+						<t:person.avatar personId="personId"></t:person.avatar>
+					</div>
+					<div class="span4" style="width:360px;">
+						<t:person.profileComponent personId="personId"/>
+					</div>
+				</div>
+			</div>
+			<!-- <t:if test="getPersonRelationGraph()">
+				<div class="span5">
+					<t:person.relationGraph personId="personId"/>
+				</div>
+			</t:if> -->
+		</div>
+		<t:if test="getPublicationFlag()">
+			<t:person.curveComponent personId="personId" >论文曲线</t:person.curveComponent>  
+		</t:if>
+	</div>	
+	
+	<div class="container">
 		<div class="row-fluid">
 			
 			<div class="span6">

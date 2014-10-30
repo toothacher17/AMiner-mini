@@ -8,9 +8,9 @@ import SchoolSearch.services.dao.schooltest.dao.SchooltestPersonDAO;
 import SchoolSearch.services.dao.schooltest.model.SchooltestPerson;
 
 
-public class test {
+public class GeneralTest {
 	public static void testIKA() {
-		InputStream is = test.class.getClassLoader().getResourceAsStream("IKAnalyzer/ext.dic");
+		InputStream is = GeneralTest.class.getClassLoader().getResourceAsStream("IKAnalyzer/ext.dic");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		String line = null;
 		try {
@@ -26,6 +26,9 @@ public class test {
 		List<SchooltestPerson> walkAll = SchooltestPersonDAO.getInstance().walkAll();
 		System.out.println("the walkall size is " + walkAll.size());
 	}
+	
+	
+	
 	
 	
 	public static void main(String[] args) {

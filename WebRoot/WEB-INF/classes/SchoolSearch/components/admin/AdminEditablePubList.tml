@@ -4,7 +4,7 @@
 		<t:zone elementName="div" t:id="publicationListZone" id="publicationListZone">
 			<t:if test="getShowType()">
 				<div class="section-header">
-					<h3>Your Publications: ${getPublicationListSize() }</h3>
+					<h3>${person.name}的论文： ${getPublicationListSize() }</h3>
 				</div>
 				<ul id="pub_list" class="rich-info-list publication-list rich-list small"> 
 					<t:loop source="publicationList" value="publication" index="index">
@@ -33,8 +33,8 @@
 								<div class="p pull-left">
 									<span >${publication.jconf }</span> - <span>${publication.year }</span>
 								</div>
-								<div class="p pull-left">
-									<t:eventlink event="deletePublication" zone="^" context="[publication.id, personId]" class="btn btn-primary">Not my publication</t:eventlink>
+								<div class="p pull-right">
+									<t:eventlink event="deletePublication" zone="^" context="[publication.id, personId]" class="label label-info capitalize light" shape="rect">删除</t:eventlink>
 								</div>
 								<div class="p">
 									<div class="pull-right label-area">	</div>
