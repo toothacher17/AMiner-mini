@@ -19,7 +19,9 @@ import SchoolSearch.services.dao.schooltest.model.SchooltestPersonExt;
 import SchoolSearch.services.dao.schooltest.model.SchooltestPersonInfo;
 import SchoolSearch.services.dao.schooltest.model.SchooltestPersonProfile;
 import SchoolSearch.services.dao.schooltest.model.SchooltestPersonrelation;
+import SchoolSearch.services.dao.user.model.User;
 import SchoolSearch.services.monitor.MonitorService;
+import SchoolSearch.services.services.auth.Authenticator;
 import SchoolSearch.services.services.course.CourseService;
 import SchoolSearch.services.services.graduatePublication.GraduatePublicationService;
 import SchoolSearch.services.services.person.PersonRelationService;
@@ -118,6 +120,13 @@ public class PersonIndex {
 		return flag;
 	}
 	
+	
+	public User getUser() {
+		return authenticator.getCurrentUser();
+	}
+	
+	@Inject
+	Authenticator authenticator;
 	
 	@Inject
 	PersonService personService;

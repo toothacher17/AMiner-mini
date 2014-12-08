@@ -37,7 +37,9 @@
 			<t:person.infoComponent personId="person.id" field="literal:summary" title="研究概况" newLineRegex="[\n]+"></t:person.infoComponent>
 			<t:person.infoComponent personId="person.id" field="literal:experience" title="工作履历"></t:person.infoComponent>
 			
+			<t:if test="getUser()">
 			<t:pagelink page="admin/modification" context="[person.id]" class="btn btn-mini btn-inverse btn-clear">管理我的课程和论文</t:pagelink>
+			</t:if>
 			
 			<t:if test="courseList">
 				<div class="row">
