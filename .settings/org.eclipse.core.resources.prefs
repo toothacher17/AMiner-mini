@@ -1,4 +1,4 @@
-#Sat Oct 11 18:52:44 GMT+08:00 2014
+#Thu Dec 11 17:03:50 CST 2014
 eclipse.preferences.version=1
 encoding//src/SchoolSearch/components/Layout.tml=UTF-8
 encoding//src/SchoolSearch/components/admin/AdminEditableCouList.tml=UTF-8
@@ -30,7 +30,6 @@ encoding//src/SchoolSearch/pages/AdvancedSearch.tml=UTF-8
 encoding//src/SchoolSearch/pages/Index.tml=UTF-8
 encoding//src/SchoolSearch/pages/admin/AdminIndex.tml=UTF-8
 encoding//src/SchoolSearch/pages/admin/AdminModification.tml=UTF-8
-encoding//src/SchoolSearch/pages/admin/AdminPublicationManage.tml=UTF-8
 encoding//src/SchoolSearch/pages/course/CourseIndex.tml=UTF-8
 encoding//src/SchoolSearch/pages/department/DepartmentIndex.tml=UTF-8
 encoding//src/SchoolSearch/pages/department/DepartmentView.tml=UTF-8
